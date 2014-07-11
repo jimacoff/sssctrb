@@ -1,0 +1,93 @@
+
+<%= javascript_include_tag 'user_management/user-profile-app' %>
+
+<style>
+    #sortable {
+        list-style-type: none;
+        margin: 20px;
+        padding: 0;
+        width: 100%;
+        /*border: solid 1px;*/
+    }
+
+    #sortable li {
+        margin: 5px;
+        padding: 5px;
+        float: left;
+        width: 450px;
+        height: 400px;
+        font-size: 4em;
+        text-align: center;
+        /*border: solid 1px;*/
+    }
+
+    #sortable li {
+        height: 1.5em;
+        line-height: 1.2em;
+    }
+
+    .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+</style>
+
+<ul id="sortable">
+  <li id="profile_completeness"></li>
+  <li id="address_book"></li>
+</ul>
+
+<script>
+
+    $(function() {
+        $( "#sortable" ).sortable({
+            placeholder: "ui-state-highlight"
+        });
+        $( "#sortable" ).disableSelection();
+    });
+
+    Ext.onReady(function () {
+
+        var user_details_paths = {
+            "personal_details_submit_path":'<%=save_profile_details_path(current_user.id)%>',
+            "personal_details_get_path":'<%=get_profile_details_path(current_user.id)%>',
+            "user_details_get_path":'<%=get_user_details_path(current_user.id)%>',
+            "non_indian_specific_details_submit_path":'<%=save_non_indian_specific_details_path(current_user.id)%>',
+            "non_indian_specific_details_get_path":'<%=get_non_indian_specific_details_path(current_user.id)%>',
+        };
+
+        var config_variables = {
+            "user_id":<%=current_user.id%>
+        }
+
+        var user_profile_controller = UserManagement.app.getController('UserProfile');
+        user_profile_controller.configure_paths_and_variables(user_details_paths,config_variables);
+
+        user_profile_controller.getUserDetails();
+
+        Ext.create('Ext.panel.Panel',{
+            title:'Profile Completeness',
+            width:400,
+            user_details_paths:user_details_paths,
+            height:400,
+            layout:'hbox',
+            itemId:'profile_completeness_panel',
+            items:[
+                {
+                    xtype:'profileCompletenessChart',
+                    purpose:'fullProfile'
+                }
+            ],
+            renderTo:document.getElementById('profile_completeness')
+        });
+
+        Ext.create('Ext.panel.Panel',{
+            title:'Address Book',
+            width:400,
+            height:400,
+            layout:'vbox',
+            items:[],
+            renderTo:document.getElementById('address_book')
+        })
+    })
+
+</script>
+

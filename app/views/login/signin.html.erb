@@ -1,0 +1,113 @@
+<div id="login_module" class="login_div">
+</div>
+
+<script>
+
+    var contentDiv = document.getElementById('login_module');
+
+    var formPanel = Ext.create('Ext.form.Panel', {
+        title: 'Login',
+//        ui:'panelUi',
+        width:350,
+        height:130,
+        layout:{
+//            type:'vbox',
+//            align:'stretch'
+        },
+//        autoScroll:true,
+
+        bodyPadding: 5,
+
+        // The form will submit an AJAX request to this URL when submitted
+        url: '<%=login_signin_path%>',
+//        url: '<%=user_session_path%>',
+
+        // Fields will be arranged vertically, stretched to full width
+        layout: 'anchor',
+//        defaults: {
+//            anchor: '100%'
+//        },
+
+        // The fields
+//        defaultType: 'textfield',
+        items: [{
+            xtype:'textfield',
+            fieldLabel: 'Email Id',
+            size:27,
+            name: 'email',
+            msgTarget:'side',
+            allowBlank: false,
+            value:'mail2sanand@gmail.com'
+        },{
+            xtype:'textfield',
+            fieldLabel: 'Password',
+            size:27,
+            msgTarget:'side',
+            inputType:'password',
+            name: 'password',
+            allowBlank: false,
+            value:'Sairam9999'
+        },{
+            xtype:'button',
+            text:'Login',
+            handler: function() {
+                var form = this.up('form').getForm();
+                if (form.isValid()) {
+                    form.submit({
+                        success: function(form, action) {
+                            if(action.result.user){
+                                alert("Successful Login");
+                            }else{
+                                alert("Login error");
+                            }
+                        },
+                        failure: function(form, action) {
+                            Ext.Msg.alert('There seems to be some technical error. Please try after some time.');
+                        }
+                    });
+                }else{
+                    Ext.Msg.alert("Please check the errors before proceeding");
+                    return false;
+                }
+            }
+        }],
+//        buttons:[{
+//            text:'Submit'
+//        }],
+
+        // Reset and Submit buttons
+//        buttons: [{
+//            text: 'Reset',
+//            handler: function() {
+//                this.up('form').getForm().reset();
+//            }
+//        }, {
+//            text: 'Submit',
+////            formBind: true, //only enabled once the form is valid
+////            disabled: true,
+////            handler: function() {
+////                var form = this.up('form').getForm();
+////                if (form.isValid()) {
+////                    form.submit({
+////                        success: function(form, action) {
+////                            Ext.Msg.alert('Success', action.result.msg);
+////                        },
+////                        failure: function(form, action) {
+////                            Ext.Msg.alert('Failed', action.result.msg);
+////                        }
+////                    });
+////                }
+////            }
+//        }],
+        renderTo: contentDiv
+    });
+
+    Ext.onReady(function () {
+//        extReady = true;
+//        LibrariesReady();
+        formPanel.show();
+
+    });
+
+</script>
+

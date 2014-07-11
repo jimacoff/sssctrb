@@ -1,0 +1,147 @@
+
+<div style="margin: auto;width: 50%;padding-left: 40px;">
+  Welcome to Sri Sathya Sai Ashram Room Booking System.
+</div>
+
+<div id="login_module" class="login_div" >
+</div>
+
+<script>
+
+    var authencityToken = $('meta[name="csrf-token"]').attr('content');
+
+    var contentDiv = document.getElementById('login_module');
+
+    Ext.onReady(function () {
+
+        Ext.create('Ext.form.Panel', {
+            title: 'Login',
+    //        ui:'panelUi',
+            width:450,
+            height:200,
+            layout:{
+//                type:'hbox',
+    //            align:'stretch'
+            },
+    //        autoScroll:true,
+
+            bodyPadding: 20,
+
+            // The form will submit an AJAX request to this URL when submitted
+            url: '<%=session_path(resource_name)%>',
+    //        standardSubmit: true,
+
+            // Fields will be arranged vertically, stretched to full width
+    //        layout: 'anchor',
+    //        defaults: {
+    //            anchor: '100%'
+    //        },
+
+            // The fields
+    //        defaultType: 'textfield',
+            items: [
+                {
+                    xtype:'textfield',
+                    fieldLabel: 'Email Id',
+                    size:27,
+                    flex:1,
+                    name: 'user[email]',
+                    msgTarget:'side',
+                    allowBlank: false,
+        //            value:'mail2sanand@gmail.com'
+                },{
+                    xtype:'textfield',
+                    fieldLabel: 'Password',
+                    flex:1,
+                    size:27,
+                    msgTarget:'side',
+                    inputType:'password',
+                    name: 'user[password]',
+                    allowBlank: false,
+        //            value:'Sairam9999'
+                },{
+                    xtype: 'hiddenfield',
+                    flex:1,
+                    name: 'authenticity_token',
+                    value: authencityToken
+                },{
+                    xtype: 'checkbox',
+                    flex:1,
+                    fieldLabel: 'Remember me',
+                    name: 'remember_me'
+                },
+                {
+                    xtype:'toolbar',
+                    margin:"20 0 0 0",
+                    cls:'sign_in_toolbar',
+                    flex:1,
+                    border:1,
+    //                height:40,
+                    layout:{
+    //                    type:'hbox'
+                    },
+                    items:[
+                        {
+                            xtype:'button',
+                            cls:'login_button',
+//                            flex:1,
+                            text:'Login',
+                            size:40,
+    //                        margin: '10 0 0 0',
+                            handler: function() {
+                                var form = this.up('form').getForm();
+                                if (form.isValid()) {
+                                    form.submit({
+                                        success: function(form, action) {
+                                            location.href = action.result.redirect_to;
+                                        },
+                                        failure: function(form, action) {
+                                            var response = Ext.decode(action.response.responseText);
+                                            var errors = response.message;
+                                            Ext.Msg.show({
+                                                title:'Alert',
+                                                msg:errors,
+                                                buttons:Ext.Msg.OK
+                                            });
+                                            if(response.activation_pending){
+                                                form.reset();
+                                            }
+                                        }
+                                    });
+                                }else{
+                                    Ext.Msg.alert("Please check the errors before proceeding");
+                                    return false;
+                                }
+                            }
+                        },
+                        '->',
+                        {
+                            xtype: 'box',
+                            autoEl: {
+                                tag: 'a',
+                                href: '<%=new_user_registration_path%>',
+                                html: 'Sign Up'
+                            }
+                        },
+                        {
+                            xtype: 'box',
+                            margin:"0 0 0 10",
+                            autoEl: {
+                                tag: 'a',
+                                href: '<%=new_user_password_path%>',
+                                html: 'Forgot Password'
+                            }
+                        }
+                    ]
+                }
+            ],
+            renderTo: contentDiv
+        });
+
+    });
+
+</script>
+
+<!--
+    <%= render "devise/shared/links" %>
+-->

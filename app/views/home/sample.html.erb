@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSSCTRoomBooking</title>
+  <%= stylesheet_link_tag 'application' %>
+
+</head>
+
+<body>
+
+    <div id="login_module" class="login_div">
+    </div>
+
+    <script>
+        var conten(tDiv = document.getElementById('login_module');
+
+        Ext.onReady(function() {
+            alert("Ext is ready");
+
+            Ext.create('Ext.Panel', {
+//            width: 500,
+//            height: 300,
+            border:1,
+                    title: "HBoxLayout Panel",
+                    layout: {
+                type: 'vbox',
+//                    align: 'stretch'
+            },
+            items: [
+                {
+                    xtype:'button',
+                    text:'Button1'
+                },
+                {
+                    xtype:'button',
+                    text:'Button2'
+                },
+                {
+                    xtype:'button',
+                    text:'Button3'
+                },
+            ],
+                    renderTo: contentDiv
+        }).show();
+        });
+
+    </script>
+
+
+
+</body>
+</html>

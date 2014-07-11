@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyText
+  state: MyString
+  city: MyString
+  pincode: MyString
+  verification_id_proof: MyString
+  verification_id_number: MyString
+  references: 
+
+two:
+  address: MyText
+  state: MyString
+  city: MyString
+  pincode: MyString
+  verification_id_proof: MyString
+  verification_id_number: MyString
+  references: 

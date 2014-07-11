@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSSCTRoomBooking</title>
+  <%= csrf_meta_tag %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application' %>
+
+</head>
+<body>
+
+<div class="main_div">
+  <div>
+    <img src="<%= asset_path 'logo-03.jpg' %>" style="border: 0;padding: 0px;margin: 0px" border="0"/>
+    <img src="<%= asset_path 'heading-02.jpg' %>" style="border: 0;padding: 0px;margin: 0px" border="0"/>
+
+    <div class="div_1">
+      <div style="float: right;padding-right: 10px;"><% if user_signed_in? %>
+          Welcome <%= current_user.email %>
+          <%= link_to 'logout?', destroy_user_session_path, :method => 'delete' %>
+      <% end %></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
+<%= yield %>
+
+</body>
+</html>

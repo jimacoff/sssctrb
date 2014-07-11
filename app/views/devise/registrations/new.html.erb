@@ -1,0 +1,37 @@
+<h2>New User Sign up</h2>
+
+<%= javascript_include_tag 'user_management/app' %>
+
+<div id="signup_module">
+</div>
+
+<script>
+
+    var authencityToken = $('meta[name="csrf-token"]').attr('content');
+
+    var contentDiv = document.getElementById('signup_module');
+
+    Ext.onReady(function () {
+
+        Ext.create('Ext.panel.Panel', {
+            title: 'New User Sign Up',
+            //        ui:'panelUi',
+            width:1000,
+            layout:'anchor',
+            items:[
+                {
+                    xtype:'signUpForm',
+                    authentication_key:authencityToken,
+                    users_check_for_duplicate_user_path:'<%=users_check_for_duplicate_user_path%>',
+                    asset_path_valid:'<%=asset_path 'valid.jpeg'%>',
+                    asset_path_invalid:'<%=asset_path 'invalid.jpeg' %>',
+                    form_submit_path:'<%=user_registration_path%>',
+                    purpose:'Register'
+                },
+            ],
+            renderTo: contentDiv
+        });
+
+    });
+
+</script>

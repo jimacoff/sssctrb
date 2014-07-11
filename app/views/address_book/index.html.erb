@@ -1,0 +1,73 @@
+<%= javascript_include_tag 'user_management/user-profile-app' %>
+
+<div id="address_book_main_div"></div>
+
+<script>
+  Ext.onReady(function(){
+      var user_details_paths = {
+          "personal_details_submit_path":'<%=save_profile_details_path(current_user.id)%>',
+          "personal_details_get_path":'<%=get_profile_details_path(current_user.id)%>',
+          "user_details_get_path":'<%=get_user_details_path(current_user.id)%>',
+          "non_indian_specific_details_submit_path":'<%=save_non_indian_specific_details_path(current_user.id)%>',
+          "non_indian_specific_details_get_path":'<%=get_non_indian_specific_details_path(current_user.id)%>',
+      };
+
+      var config_variables = {
+          "user_id":<%=current_user.id%>
+      }
+
+      var user_profile_controller = UserManagement.app.getController('UserProfile');
+      user_profile_controller.configure_paths_and_variables(user_details_paths,config_variables);
+
+        Ext.create('Ext.container.Container',{
+            layout:{
+                type:'hbox'
+            },
+            renderTo:document.getElementById('address_book_main_div'),
+            width:1000,
+            margin:'10 0 0 0',
+            defaults:{
+                header: {
+                    titleAlign: 'center'
+                },
+            },
+            items:[
+                {
+                    xtype:'addressBookTreePanel',
+                    title:'Address Book Tree',
+                    flex:1,
+                    listeners:{
+                        afterrender:function(){
+                           this.fireEvent('populate_address_book_users')
+                        }
+                    }
+                },
+                {
+                    xtype:'panel',
+                    title:'Member Details',
+                    flex:5,
+                }
+            ],
+//            initComponent:function(){
+//                var me = this;
+//                me.items = [
+//                    {
+//                        xtype:'panel',
+//                        title:'Address Book Tree',
+//                        flex:1
+//                    },
+//                    {
+//                        xtype:'panel',
+//                        title:'Member Details',
+//                        flex:5,
+//                    }
+//                ];
+//
+//                me.callParent();
+//
+//            }
+        })
+
+
+  })
+</script>

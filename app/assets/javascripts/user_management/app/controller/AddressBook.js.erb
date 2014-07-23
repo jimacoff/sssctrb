@@ -1,0 +1,294 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('UserManagement.controller.AddressBook', {
+  extend: 'UserManagement.controller.UserProfile',
+  views: [
+      'UserManagement.view.addressBook.AddressBookTreePanel',
+      'UserManagement.view.addressBook.MemberDetailsPanel',
+      'UserManagement.view.addressBook.PassportVisaDetails',
+      'UserManagement.view.addressBook.ArrivalAndOtherInformation'
+  ],
+
+  models:[
+    'UserManagement.model.UserProfile.AddressBookModel',
+//    'UserManagement.model.UserProfile.UserProfileDetails',
+//    'UserManagement.model.UserProfile.User',
+//    'UserManagement.model.UserProfile.NonIndianSpecificDetails',
+  ],
+  stores:[
+    'UserManagement.store.UserProfile.AddressBookStore',
+//    'UserManagement.store.UserProfile.UsersStore'
+  ],
+
+  refs: [
+      {
+        ref: 'addressBookTreePanel',
+        selector: 'addressBookTreePanel'
+      },
+      {
+          selector: 'addressBookTreePanel treepanel[itemId="addressBookId"]',
+          ref: 'addressBookTree'
+      },
+      {
+          ref: 'memberDetailsPanel',
+          selector: 'memberDetailsPanel'
+      },
+      {
+          selector: 'memberDetailsPanel form[itemId="userDetailsId"]',
+          ref: 'userForm'
+      },
+      {
+          selector: 'memberDetailsPanel form[itemId="userPersonalDetailsId"]',
+          ref: 'personalDetailsForm'
+      },
+      {
+          selector: 'memberDetailsPanel form[itemId="passportDetails"]',
+          ref: 'passportForm'
+      }
+  ],
+
+  init: function() {
+//    this.control({
+      this.listen({
+          controller:{
+
+          },
+          component:{
+              'addressBookTreePanel':{
+//                  profileChartDoubleClick:this.onProfileChartDoubleClick,
+                  afterrender:this.loadAddressBookData,
+              },
+              'addressBookTreePanel treepanel':{
+                  selectLeadUser:this.selectUserInAddressBook,
+                  select:this.selectuser
+              },
+              'addressBookTreePanel button':{
+                  click:this.userOperations,
+              },
+              'memberDetailsPanel':{
+                    afterrender:this.populateUserInfo
+              },
+              'memberDetailsPanel button[itemId="Save"]':{
+                  click:this.saveMemberDetails
+              },
+              'configure_paths':this.configure_paths
+          }
+      });
+  },
+  userOperations:function(button){
+    if(button.itemId == 'addUser'){
+        this.addUserMember();
+    }else if(button.itemId == 'deleteUser'){
+        this.deleteUser();
+    }
+  },
+  addUserMember:function(){
+      var newUser = Ext.create('UserManagement.model.UserProfile.User',{id:0})
+      this.deselectUserinAddressBook();
+      this.loadUserRecordInView(newUser);
+  },
+  saveMemberDetails:function(){
+      var memberDetailsPanel = this.getMemberDetailsPanel();
+
+      // Load the user Profile Details Tab
+      var authencityTokenParam = $('meta[name="csrf-token"]').attr('content');
+
+      this.getUserForm().getForm().updateRecord();
+      this.getPassportForm().getForm().updateRecord();
+      this.getPersonalDetailsForm().getForm().updateRecord();
+
+      var userRecord = this.getUserForm().getForm().getRecord();
+      var user_id = userRecord.get('id');
+
+      var operation = "edit"
+
+      if(user_id == 0){
+          operation = "add"
+          userRecord.set('dependent_user_id',this.config_variables["user_id"])
+      }
+
+      userRecordData = Ext.encode(userRecord.getData(true));
+
+      form_submit_path = "<%=CGI.unescape url_helper.save_member_details_path('{user_id}')%>";
+      url_path = this.getUrlWithUserId(form_submit_path,user_id)
+
+      url_params = {
+          authenticity_token:authencityTokenParam,
+          userDetails:userRecordData,
+          operation:operation
+      }
+
+      Ext.Ajax.request({
+          url:url_path,
+          params:url_params,
+          method:'POST',
+          scope:this,
+          success:function(response){
+            console.log(response);
+              var result = Ext.decode(response.responseText);
+              var result_message = result.message;
+              Ext.Msg.show({
+                  title:'Alert',
+                  msg:result_message,
+                  buttons:Ext.Msg.OK
+              });
+          },
+          failure:function(form,action){
+              var result_message = action.result.message;
+              Ext.Msg.show({
+                  title:'Alert',
+                  msg:result_message,
+                  buttons:Ext.Msg.OK
+              });
+          }
+      });
+
+//      var userPersonalDetailsTab = memberDetailsPanel.down('#userPersonalDetailsId');
+//      var userPersonalDetailsRecord = userPersonalDetailsTab.getForm().getRecord();
+//      var user_id = userPersonalDetailsRecord.get('personal_detail[user_id]');
+//
+//      var mainMemberDetails = userPersonalDetailsRecord.user;
+//      var mainMemberDetailsData = mainMemberDetails.getData(true);
+//
+//      var memberDetailsForm = memberDetailsPanel.getForm();
+//
+//      memberDetailsSubmitPath = this.user_details_paths["save_member_details_path"]+user_id;
+//
+//
+//      memberDetailsForm.submit({
+//          url:memberDetailsSubmitPath,
+//          params:{
+//              authenticity_token:authencityTokenParam,
+////              user:mainMemberDetailsData //Ext.encode(mainMemberDetailsData)
+//              userMemberDetails:Ext.encode(mainMemberDetailsData)
+//          },
+//          waitMsg: 'Saving User Details ...',
+//          success:function(form,action){
+//              var result = action.result;
+//
+//              var result_message = result.message;
+//
+//              Ext.Msg.show({
+//                  title:'Alert',
+//                  msg:result_message,
+//                  buttons:Ext.Msg.OK
+//              });
+//          },
+//          failure:function(form,action){
+//              var result_message = action.result.message;
+//              Ext.Msg.show({
+//                  title:'Alert',
+//                  msg:result_message,
+//                  buttons:Ext.Msg.OK
+//              });
+//          }
+//      })
+
+  },
+  deselectUserinAddressBook:function(){
+      var addressBookTree = this.getAddressBookTree();
+      var abRootnode = addressBookTree.getRootNode();
+      addressBookTree.selectPath(abRootnode.getPath());
+  },
+  selectUserInAddressBook:function(userId){
+      var addressBookTree = this.getAddressBookTree();
+      var treeStore = addressBookTree.getStore();
+      var leadUserNode = treeStore.getNodeById(userId);
+      addressBookTree.selectPath(leadUserNode.getPath());
+  },
+  selectuser:function(thisElement, record, item, index, e, eOpts){
+      var userId = record.get('id');
+      var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+
+      console.log(user_details_store.getRange());
+
+      var selectedUser = user_details_store.findRecord('id',userId);
+
+      console.log(selectedUser.personal_detail)
+
+      if(selectedUser){
+          this.loadUserRecordInView(selectedUser);
+      }
+  },
+  loadUserRecordInView:function(userRecord){
+      var userPersonalDetailsTab = this.getMemberDetailsPanel();
+
+      // Load the user Profile Details Tab
+      this.getUserForm().getForm().loadRecord(userRecord);
+
+      personalDetail = userRecord.personal_detail
+
+      console.log("In load User in View : "+personalDetail);
+
+      if(!personalDetail){
+          personalDetail = Ext.create('UserManagement.model.UserProfile.UserProfileDetails',
+              {
+                  'personal_detail[user_id]':0
+              }
+          )
+          personalDetail.user = userRecord;
+          userRecord.personal_detail = personalDetail
+      }
+
+      this.getPersonalDetailsForm().getForm().loadRecord(personalDetail);
+
+      // Load the passport / Visa Details Tab
+      var passportDetails = this.getPassportForm();
+      non_indian_specific_detail = userRecord.non_indian_specific_detail
+      if(!non_indian_specific_detail){
+        non_indian_specific_detail
+            = Ext.create('UserManagement.model.UserProfile.NonIndianSpecificDetails')
+
+        userRecord.non_indian_specific_detail = non_indian_specific_detail
+      }
+
+      passportDetails.getForm().loadRecord(non_indian_specific_detail);
+  },
+  populateUserInfo:function(){
+      var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+  },
+  loadAddressBookData:function(){
+
+      // Populate the addressbook from the user store itself.
+      var thisControllerRef = this;
+
+      this.getUserDetails(function(){
+          var addressBookPanel = thisControllerRef.getAddressBookTreePanel();
+          var addressBookTreePanel =
+              addressBookPanel.down('#addressBookId');
+
+          var addressBookRootNode = {
+              name: 'users',
+              text: 'Users',
+              expanded: true,
+              leaf: false,
+              children: []
+          };
+
+          addressBookTreePanel.setRootNode(addressBookRootNode);
+          var user_details_store = thisControllerRef.getUserManagementStoreUserProfileUsersStoreStore();
+
+          var abRootnode = addressBookTreePanel.getRootNode();
+
+          user_details_store.each(function(eachAddress){
+              var childNode;
+
+              childNode = {
+                  name: eachAddress.get('full_name'),
+                  text: eachAddress.get('full_name'),
+                  leaf: true,
+                  id:eachAddress.get('id')
+              }
+
+              abRootnode.appendChild(childNode);
+
+          });
+
+          // Select the Lead user in the AddressBook
+          addressBookTreePanel.fireEvent('selectLeadUser',2);
+
+      });
+
+  },
+
+});

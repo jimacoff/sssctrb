@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def getRandomNumber
+    rand(1000000000)
+  end
+
   def sign_in_and_redirect(resource_or_scope,resource)
     if resource_or_scope == :user
       redirect_to home_index_path

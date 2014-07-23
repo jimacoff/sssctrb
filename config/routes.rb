@@ -34,6 +34,8 @@ SSSCTRoomBooking::Application.routes.draw do
   get 'address_book', to:'address_book#index', as: 'address_book'
   get 'get_users_for_address_book', to:'address_book#get_users_for_address_book'
 
+  post 'save_member_details/:id', to:'address_book#save_member_details', as:'save_member_details'
+
   # ==========================================================
 
 

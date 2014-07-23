@@ -1,19 +1,31 @@
 class UserDetailsController < ApplicationController
 
   def get_user_details
-    user = User.find_by_id(params[:id])
+    main_user_id =params[:id]
+    users = User.where("id = ? or dependent_user_id = ?", main_user_id, main_user_id)
 
-    render :json => {
-        "success" => true,
-        "user_details" => [
-            {
-                "user" => user,
-                "personal_detail" => user.personal_detail,
-                "non_indian_specific_detail" => user.non_indian_specific_detail,
-                #"indianSpecific_detail" => user.personal_detail
-            }
-        ]
-    }
+    #userjson = users.to_json(:include => [:personal_detail,:non_indian_specific_detail])
+    ActiveRecord::Base.include_root_in_json = false
+
+    json_user_data = users.to_json(:include => [:personal_detail,:non_indian_specific_detail])
+    puts 'json_user_data',json_user_data.inspect
+
+    render :json => json_user_data
+
+    #render :json => {
+    #    "success" => true,
+    #    "user_details" => users.to_json(:include => [:personal_detail,:non_indian_specific_detail])
+    #}
+
+    #[
+    #    {
+    #        "user" => user,
+    #        "personal_detail" => user.personal_detail,
+    #        "non_indian_specific_detail" => user.non_indian_specific_detail,
+    #        #"indianSpecific_detail" => user.personal_detail
+    #    }
+    #]
+
   end
 
   def get_personal_details
@@ -41,12 +53,14 @@ class UserDetailsController < ApplicationController
     non_indian_specific_details = user.non_indian_specific_detail
     save_op = false
 
+    non_indian_specific_details_params = JSON.parse(params[:non_indian_specific_detail])
+
     if non_indian_specific_details
       save_op =
-          non_indian_specific_details.update(user_non_indian_specific_details_params)
+          non_indian_specific_details.update(user_non_indian_specific_details_params(non_indian_specific_details_params))
     else
       save_op =
-          create_non_indian_specific_details_for_user(user.id,user_non_indian_specific_details_params)
+          create_non_indian_specific_details_for_user(user.id,user_non_indian_specific_details_params(non_indian_specific_details_params))
     end
 
     user.reload
@@ -68,15 +82,23 @@ class UserDetailsController < ApplicationController
 
   def save_personal_details
     user = User.find_by_id(params[:id])
+
+    personal_details = JSON.parse(params[:personal_detail])
+
+    puts personal_details
+
     user_personal_details = user.personal_detail
     save_op = false
 
     if user_personal_details
+      permitted_params = user_personal_details_params(personal_details)
+      puts "permitted_params :",permitted_params
       save_op =
-          user_personal_details.update(user_personal_details_params)
+          user_personal_details.update(permitted_params)
     else
+      puts "New user_personal_details record"
       save_op =
-          create_personal_details_for_user(user.id,user_personal_details_params)
+          create_personal_details_for_user(user.id,user_personal_details_params(personal_details))
     end
 
     #Update the Photo URLs
@@ -103,15 +125,32 @@ class UserDetailsController < ApplicationController
     render :json => save_op_params
   end
 
-  private
   def create_personal_details_for_user(user_id,personal_details_params)
     new_user_personal_detail = PersonalDetail.new(personal_details_params)
     new_user_personal_detail.user_id=user_id
     new_user_personal_detail.save
+
+    new_user_personal_detail
   end
 
-  def user_personal_details_params
-    params.require(:personal_detail).permit(
+  def create_non_indian_specific_details_for_user(user_id,non_indian_specific_details_params)
+    new_non_indian_specific_detail =
+        NonIndianSpecificDetail.new(non_indian_specific_details_params)
+    new_non_indian_specific_detail.user_id=user_id
+    new_non_indian_specific_detail.save
+
+    new_non_indian_specific_detail
+  end
+
+  private
+
+  def user_personal_details_params(personal_details)
+    personal_detail_params = ActionController::Parameters.new(personal_details)
+
+    personal_detail_params.except(
+        :photo_path,:user_id,:photo_original_url,:photo_medium_url,:photo_thumb_url,
+        :photo_small_url,:updated_at,:id
+    ).permit(
         :photo,
         :dob,
         :gender,
@@ -127,15 +166,12 @@ class UserDetailsController < ApplicationController
     )
   end
 
-  def create_non_indian_specific_details_for_user(user_id,non_indian_specific_details_params)
-    new_non_indian_specific_detail =
-        NonIndianSpecificDetail.new(non_indian_specific_details_params)
-    new_non_indian_specific_detail.user_id=user_id
-    new_non_indian_specific_detail.save
-  end
+  def user_non_indian_specific_details_params(non_indian_specific_detail)
+    non_indian_specific_detail_params = ActionController::Parameters.new(non_indian_specific_detail)
 
-  def user_non_indian_specific_details_params
-    params.require(:non_indian_specific_detail).permit(
+    non_indian_specific_detail_params.except(
+        :user_id,:updated_at,:id
+    ).permit(
         :passport_number,
         :passport_city_of_issue,
         :passport_country_of_issue,

@@ -1,4 +1,6 @@
-class User < ActiveRecord::Base
+class DependentUser < ActiveRecord::Base
+
+  self.table_name = 'users'
 
   include ActiveModel::Serializers::JSON
 
@@ -11,12 +13,11 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+  #devise :database_authenticatable, :registerable,
+  #       :recoverable, :rememberable, :trackable, :validatable,
+  #       :confirmable
 
-  attr_accessor :password
-                #:personal_detail,:non_indian_specific_detail
+  attr_accessor :personal_detail,:non_indian_specific_detail
 
                 #:indianNationalData
 
@@ -33,41 +34,8 @@ class User < ActiveRecord::Base
   #validates_attachment_size :photo, :less_than => 2.megabytes
   #validates_attachment_content_type :photo, :content_type => %w(image/jpeg image/jpg image/png)
 
-  def self.authenticate(username, password)
-    user = User.find_for_authentication(:email => username)
-    validUser = nil
-
-    if user
-      validUser = user.valid_password?(password) ? user : nil
-      if(validUser)
-        User.success!(validUser)
-        #success!(validUser)
-      end
-
-    end
-
-    validUser
-
-  end
-
-  def confirmed?
-    super
-  end
-
-  def password=(password)
-    super
-  end
-
   def fullName
     first_name + last_name
-  end
-
-  def admin?
-    role == 0
-  end
-
-  def normal_user?
-    role == 1
   end
 
 end

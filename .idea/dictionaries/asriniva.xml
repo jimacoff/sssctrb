@@ -2,7 +2,12 @@
   <dictionary name="asriniva">
     <words>
       <w>afterrender</w>
+      <w>pincode</w>
+      <w>selectuser</w>
       <w>signin</w>
+      <w>strech</w>
+      <w>vbox</w>
+      <w>xtype</w>
     </words>
   </dictionary>
 </component>

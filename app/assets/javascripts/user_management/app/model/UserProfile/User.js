@@ -1,22 +1,23 @@
 Ext.define('UserManagement.model.UserProfile.User', {
   extend:'Ext.data.Model',
   fields: [
-    { name: 'id', type: 'int' ,mapping:'user.id'},
-    { name: 'user[email]', type: 'string',mapping:'user.email'},
-    { name: 'user[first_name]', type: 'string' ,mapping:'user.first_name'},
-    { name: 'user[last_name]', type: 'string' ,mapping:'user.last_name'},
-    { name: 'nationality', type: 'string'},
+    { name: 'id', type: 'int'},
+    { name: 'email', type: 'string'},
+    { name: 'first_name', type: 'string'},
+    { name: 'last_name', type: 'string'},
+    { name: 'nationality', type: 'int'},
+    { name: 'dependent_user_id', type: 'int'},
 
     { name: 'full_name', type: 'string' ,
         convert:function(newValue,record){
-            return record.get('user[first_name]') + " " + record.get('user[last_name]')
+            return record.get('first_name') + " " + record.get('last_name')
         }
     },
     { name: 'gender_age', type: 'string' ,
       convert:function(newValue,record){
-          var rec_gender = record.get('user[gender]');
+          var rec_gender = record.get('gender');
           var gender = (rec_gender ? (rec_gender == 1 ? "M" : "F") : '');
-          return    gender+ "( " + record.get('user[age]') + " )";
+          return    gender+ "( " + record.get('age') + " )";
       }
     },
 
@@ -32,7 +33,7 @@ Ext.define('UserManagement.model.UserProfile.User', {
       type:'hasOne',
       instanceName:'personal_detail',
       model:'UserManagement.model.UserProfile.UserProfileDetails',
-      getterName:'getpersonalDetail',
+      getterName:'getPersonalDetail',
 //      setterName:'setIndianNationalInfo',
       associationKey:'personal_detail',
       associatedName:'personal_detail'
@@ -46,6 +47,15 @@ Ext.define('UserManagement.model.UserProfile.User', {
       associationKey:'non_indian_specific_detail',
       associatedName:'non_indian_specific_detail'
     }
+//      ,{
+//          type:'hasOne',
+//          instanceName:'passportDetail',
+////      model:'UserManagement.model.UserProfile.NonIndianSpecificDetails',
+//          model:'UserManagement.model.UserProfile.PassportDetails',
+//          getterName:'getpassportDetail',
+//          associationKey:'passportDetail',
+//          associatedName:'passportDetail'
+//      }
   ],
 //    constructor: function(data) {
 //        this.callParent([data]);
@@ -63,7 +73,7 @@ Ext.define('UserManagement.model.UserProfile.User', {
 //        url:'/get_all_users',
         reader: {
             type: 'json',
-            root:'user_details'
+            root:'/'
         }
     }
 

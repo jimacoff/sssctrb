@@ -5,7 +5,7 @@
  * Time: 3:36 PM
  * To change this template use File | Settings | File Templates.
  */
-Ext.define('UserManagement.model.UserProfile.NonIndianSpecificDetails', {
+Ext.define('UserManagement.model.UserProfile.PassportDetails', {
     extend: 'Ext.data.Model',
     fields: [
         { name: 'passport_number', type: 'string'},
@@ -17,5 +17,5 @@ Ext.define('UserManagement.model.UserProfile.NonIndianSpecificDetails', {
         { name: 'user_id', type: 'string'},
 
         { name: 'updated_at', type: 'string' },
-    ]
+    ],
 });

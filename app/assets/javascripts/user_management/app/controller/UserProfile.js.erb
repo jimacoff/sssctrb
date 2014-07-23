@@ -1,0 +1,323 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('UserManagement.controller.UserProfile', {
+  extend: 'Ext.app.Controller',
+  user_details_paths:null,
+  config_variables:null,
+  views: [
+      'UserManagement.view.userProfile.ProfileCompletenessChart',
+      'UserManagement.view.userProfile.DetailsPanel',
+      'UserManagement.view.users.UserPersonalDetails',
+      'UserManagement.view.users.UserPersonalDetailsFieldSet'
+  ],
+
+  models:[
+    'UserManagement.model.UserProfile.ProfileCompletenessChartModel',
+    'UserManagement.model.UserProfile.UserProfileDetails',
+    'UserManagement.model.UserProfile.User',
+    'UserManagement.model.UserProfile.NonIndianSpecificDetails',
+  ],
+  stores:[
+    'UserManagement.store.UserProfile.ProfileCompletenessChartStore',
+    'UserManagement.store.UserProfile.UsersStore'
+  ],
+
+  refs: [
+      {
+        ref: 'profileCompletenessChart',
+        selector: 'profileCompletenessChart'
+      },
+      {
+          ref: 'userPersonalDetails',
+          selector: 'userPersonalDetails'
+      },
+      {
+          ref: 'detailsPanel',
+          selector: 'detailsPanel'
+      }
+//      {
+//          ref: 'signUpForm',
+//          selector: 'signUpForm'
+//      },
+//      {
+//          ref: 'allUsers',
+//          selector: 'allUsers'
+//      }
+  ],
+
+  init: function() {
+//    this.control({
+      this.listen({
+          controller:{
+          },
+          component:{
+              'profileCompletenessChart':{
+                  profileChartDoubleClick:this.onProfileChartDoubleClick,
+                  render:this.loadSpecificChartData,
+              },
+              'detailsPanel button[itemId="saveDetailsButtonItemId"]':{
+                  click:this.save_user_specific_details
+              },
+              'configure_paths':this.configure_paths
+          }
+      });
+//      'sample':{
+//        render:this.renderSampleForm
+//      },
+//      'addEditUserForm button[itemId="form_submit"]': {
+//        click: this.saveUser,
+//      },
+//      'allUsers': {
+//          afterrender: this.getAllUsers
+//      },
+//      'signUpForm':{
+////          afterrender: this.
+//      },
+//      'signUpForm button[itemId="form_submit"]': {
+//          click: this.saveUser,
+//      },
+//    });
+  },
+    configure_paths_and_variables:function(user_details_paths_params,config_variables){
+
+//      this.user_details_paths = user_details_paths_params;
+
+//      var save_member_details_path = this.user_details_paths["save_member_details_path"];
+//      this.user_details_paths["save_member_details_path"] = save_member_details_path.slice(0,save_member_details_path.lastIndexOf("/")+1);
+
+      this.config_variables = config_variables;
+    },
+    getUrlWithUserId:function(urlString,user_id){
+        var replacedString = urlString.replace('{user_id}',user_id);
+        return replacedString;
+    },
+  getUserDetails:function(callbackFunction){
+      // Get the complete User Details
+      var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+
+      var url_path = "<%=CGI.unescape url_helper.get_user_details_path('{user_id}')%>";
+
+      user_details_store.load({
+          url:this.getUrlWithUserId(url_path,this.config_variables["user_id"]),
+          callback:function(){
+              if(callbackFunction)
+                  callbackFunction.call();
+          }
+      });
+
+  },
+  getUserSpecificDetailFromServer:
+    function(user_record,url_path,purpose,user_specific_detail_record,function_to_call){
+      Ext.Ajax.request({
+          scope:this,
+          url:url_path, //this.user_details_paths["personal_details_get_path"],
+          method:'GET',
+          success:function(response){
+              var responseJson = Ext.decode(response.responseText);
+
+              var user_specific_detail_response = responseJson.user_specific_detail;
+
+              if(user_specific_detail_record){
+                  Ext.Object.each(user_specific_detail_response,function(eachKey,eachvalue){
+                      var new_key = purpose+"["+eachKey+"]"; //"personal_detail["+eachKey+"]"
+                      if(user_specific_detail_record.get(new_key) != undefined){
+                          user_specific_detail_record.set(new_key,eachvalue);
+                      }
+                  });
+              }else{
+                  var recordType = ""
+                  if(purpose.search("personal_detail") != -1){
+                      recordType = 'UserManagement.model.UserProfile.UserProfileDetails';
+                      var newUserSpecificDetailRecord
+                          = Ext.create(recordType,user_specific_detail_response);
+                      user_record.personal_detail = newUserSpecificDetailRecord;
+                  }else if(purpose.search("non_indian_specific_detail") != -1){
+                      recordType = 'UserManagement.model.UserProfile.NonIndianSpecificDetails';
+                      var newUserSpecificDetailRecord
+                          = Ext.create(recordType,user_specific_detail_response);
+                      user_record.non_indian_specific_detail = newUserSpecificDetailRecord;
+                  }
+              }
+
+              if(function_to_call)
+                function_to_call.call();
+
+          }
+      })
+
+  },
+  onProfileChartDoubleClick:function(specChartObject,chartEventObject){
+      var chartParam = specChartObject.value[0];
+      var xtypeConfiguration;
+
+      // Get the User Personal Details
+      var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+      var user = user_details_store.findRecord('dependent_user_id',0);
+
+      var user_specific_detail_record = null;
+      var purpose = "";
+
+      if(chartParam.search("Non-Indian") != -1){
+        xtypeConfiguration = [
+            {
+                xtype:'detailsPanel',
+                panel_for:'nonIndianSpecificDetails',
+                width:580,
+                height:300,
+                margin:'10 10 10 10',
+                autoscroll:true,
+//                overflowY: 'scroll',
+//                overflowX: 'scroll',
+                items:[
+                    {
+                        xtype:"nonIndianSpecificDetails"
+                    }
+                ]
+            },
+            "Non-Indian Specific Details",
+            "nonIndianSpecific",
+            620
+        ]
+
+        user_specific_detail_record = user.non_indian_specific_detail;
+        purpose = "non_indian_specific_detail";
+
+      }else if(chartParam.search("Personal") != -1)
+      var thisController = this;
+        thisController.launchDetailsWindow(xtypeConfiguration);
+
+        if(user_specific_detail_record){
+            var userSpecificDetailView = thisController.getDetailsPanel();
+            var userSpecificDetailForm = userSpecificDetailView.getForm();
+            userSpecificDetailForm.loadRecord(user);
+            userSpecificDetailForm.loadRecord(user_specific_detail_record);
+        }
+  },
+  launchDetailsWindow:function(xtypeConfiguration){
+      var profileCompletenessWindowId = xtypeConfiguration[2];
+      var title = xtypeConfiguration[1];
+      var windowHeight = xtypeConfiguration[3];
+
+      var detailsWindow = this.getOrCreateProfileWindow({
+          "id":'detailsWindow',
+          "title":title,
+          "width":windowHeight
+      });
+
+      xtypeConfiguration.splice(1,3);
+
+        detailsWindow.removeAll();
+
+        detailsWindow.add(xtypeConfiguration);
+
+        detailsWindow.doLayout();
+        detailsWindow.show();
+  },
+  getOrCreateProfileWindow:function(windowConfiguration){
+      var profileWindow =
+          Ext.WindowManager.get("detailsWindow");
+
+      if(!profileWindow){
+          profileWindow = this.createAndRegisterWindow(windowConfiguration);
+      }
+
+      return profileWindow;
+  },
+  createAndRegisterWindow:function(windowConfiguration){
+      var profileWindow =
+          Ext.create('Ext.window.Window',windowConfiguration);
+
+      Ext.WindowManager.register(profileWindow);
+
+      return profileWindow;
+  },
+  loadSpecificChartData:function(profileChart){
+      var purpose = profileChart.purpose;
+      var storeToBeLoaded;
+      if(purpose == "fullProfile"){
+          storeToBeLoaded = this.loadFullProfileStore();
+      }
+  },
+  loadNonIndianProfileStore:function(){
+      data = [
+          {
+              profile_name:'Passport Details',percentage_complete:'30'
+          },
+          {
+              profile_name:'Other Details',percentage_complete:'10'
+          }
+      ];
+
+      var profileCompletenessStore = this.getUserManagementStoreUserProfileProfileCompletenessChartStoreStore();
+      profileCompletenessStore.loadRawData(data);
+  },
+  loadFullProfileStore:function(){
+      data = [
+          {
+              profile_name:'Personal Profile',percentage_complete:'90'
+          },
+          {
+              profile_name:'Non-Indian Specific',percentage_complete:'50'
+          }
+      ];
+
+      var profileCompletenessStore = this.getUserManagementStoreUserProfileProfileCompletenessChartStoreStore();
+      profileCompletenessStore.loadRawData(data);
+  },
+  save_user_specific_details:function(button){
+      var detailsFormView = button.up('.form');
+      var panel_for = detailsFormView.epanel_for;
+
+      var authencityTokenParam = $('meta[name="csrf-token"]').attr('content');
+      var form_submit_path = "";
+      var url_params = {
+          authenticity_token:authencityTokenParam
+      }
+
+      var userSpecificDetailsForm = detailsFormView.getForm();
+
+      userSpecificDetailsForm.updateRecord();
+
+      detailsRecord = userSpecificDetailsForm.getRecord();
+      var detailsRecordData = Ext.encode(detailsRecord.getData());
+
+      if(panel_for == "userPersonalDetails"){
+          form_submit_path = "<%=CGI.unescape url_helper.save_profile_details_path('{user_id}')%>";
+          url_params["personal_detail"] = detailsRecordData
+
+      }else if(panel_for == "nonIndianSpecificDetails"){
+          form_submit_path = "<%=CGI.unescape url_helper.save_non_indian_specific_details_path('{user_id}')%>";
+          url_params["non_indian_specific_detail"] = detailsRecordData
+      }
+
+      if(userSpecificDetailsForm.isValid()){
+          thisControllerRef = this;
+          Ext.Ajax.request({
+              scope:this,
+              method:'POST',
+              url:this.getUrlWithUserId(form_submit_path,detailsRecord.get('user_id')),
+              params:url_params,
+              success:function(response){
+                  var result = Ext.decode(response.responseText);
+                  var result_message = result.message;
+                  Ext.Msg.show({
+                      title:'Alert',
+                      msg:result_message,
+                      buttons:Ext.Msg.OK
+                  });
+
+              }
+          })
+      }
+      else{
+          Ext.Msg.show({
+              title:'Alert',
+              msg:"Please correct the errors in the form before proceeding",
+              buttons:Ext.Msg.OK
+          });
+      }
+
+  }
+
+
+});

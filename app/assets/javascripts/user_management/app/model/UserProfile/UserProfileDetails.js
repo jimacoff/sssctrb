@@ -8,22 +8,22 @@
 Ext.define('UserManagement.model.UserProfile.UserProfileDetails', {
     extend: 'Ext.data.Model',
     fields: [
-        { name: 'personal_detail[mobile_number]', type: 'string',mapping:'mobile_number'},
-        { name: 'personal_detail[gender]', type: 'boolean',mapping:'gender'},
-        { name: 'personal_detail[address]', type: 'string',mapping:'address' },
-        { name: 'personal_detail[state]', type: 'string',mapping:'state' },
-        { name: 'personal_detail[city]', type: 'string',mapping:'city' },
-        { name: 'personal_detail[pincode]', type: 'string',mapping:'pincode' },
-        { name: 'personal_detail[country]', type: 'string',mapping:'country' },
-        { name: 'personal_detail[date_of_birth]', type: 'date',mapping:'date_of_birth' },
+        { name: 'mobile_number', type: 'string'},
+        { name: 'gender', type: 'boolean'},
+        { name: 'address', type: 'string'},
+        { name: 'state', type: 'string'},
+        { name: 'city', type: 'string'},
+        { name: 'pincode', type: 'string'},
+        { name: 'country', type: 'string'},
+        { name: 'date_of_birth', type: 'date'},
 
-        { name: 'personal_detail[photo_path]', type: 'string',mapping:'photo_path' },
-        { name: 'personal_detail[user_id]', type: 'string',mapping:'user_id'},
+        { name: 'photo_path', type: 'string'},
+        { name: 'user_id', type: 'string'},
 
-        { name: 'personal_detail[photo_original_url]', type: 'string',mapping:'photo_original_url' },
-        { name: 'personal_detail[photo_medium_url]', type: 'string',mapping:'photo_medium_url'},
-        { name: 'personal_detail[photo_thumb_url]', type: 'string',mapping:'photo_thumb_url'},
-        { name: 'personal_detail[photo_small_url]', type: 'string',mapping:'photo_small_url'},
+        { name: 'photo_original_url', type: 'string'},
+        { name: 'photo_medium_url', type: 'string'},
+        { name: 'photo_thumb_url', type: 'string'},
+        { name: 'photo_small_url', type: 'string'},
 
         { name: 'updated_at', type: 'string' },
 
@@ -32,4 +32,15 @@ Ext.define('UserManagement.model.UserProfile.UserProfileDetails', {
 //        { name: 'mobile_number', type: 'string' },
 //        { name: 'mobile_number', type: 'string' },
     ],
+    belongsTo:[
+        {
+            name:'user',
+            instanceName:'user',
+            model:'UserManagement.model.UserProfile.User',
+            getterName:'getMainUserDetails',
+//            setterName:'setUser',
+            associationKey:'personal_detail',
+//            foreignKey:'contact_id'
+        }
+    ]
 });

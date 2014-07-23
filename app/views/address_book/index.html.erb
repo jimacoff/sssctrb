@@ -10,14 +10,16 @@
           "user_details_get_path":'<%=get_user_details_path(current_user.id)%>',
           "non_indian_specific_details_submit_path":'<%=save_non_indian_specific_details_path(current_user.id)%>',
           "non_indian_specific_details_get_path":'<%=get_non_indian_specific_details_path(current_user.id)%>',
+          "save_member_details_path":'<%=save_member_details_path(0)%>'
       };
 
       var config_variables = {
           "user_id":<%=current_user.id%>
       }
 
-      var user_profile_controller = UserManagement.app.getController('UserProfile');
-      user_profile_controller.configure_paths_and_variables(user_details_paths,config_variables);
+//      var user_profile_controller = UserManagement.app.getController('UserProfile');
+      var addressbook_controller = UserManagement.app.getController('AddressBook');
+      addressbook_controller.configure_paths_and_variables(user_details_paths,config_variables);
 
         Ext.create('Ext.container.Container',{
             layout:{
@@ -25,16 +27,19 @@
             },
             renderTo:document.getElementById('address_book_main_div'),
             width:1000,
+            height:450,
             margin:'10 0 0 0',
             defaults:{
-                header: {
-                    titleAlign: 'center'
-                },
+//                header: {
+//                    titleAlign: 'center'
+//                },
+                height:450,
             },
             items:[
                 {
                     xtype:'addressBookTreePanel',
-                    title:'Address Book Tree',
+                    title:'Address Book',
+                    multiSelect: true,
                     flex:1,
                     listeners:{
                         afterrender:function(){
@@ -43,10 +48,20 @@
                     }
                 },
                 {
-                    xtype:'panel',
-                    title:'Member Details',
+                    xtype:'memberDetailsPanel',
                     flex:5,
+//                    autoScroll:true
                 }
+//                {
+//                    xtype:'panel',
+//                    title:'Member Details',
+//                    flex:5,
+//                    items:[
+//                        {
+//                            xtype:'memberDetailsPanel'
+//                        }
+//                    ]
+//                }
             ],
 //            initComponent:function(){
 //                var me = this;

@@ -58,10 +58,11 @@
             "user_id":<%=current_user.id%>
         }
 
-        var user_profile_controller = UserManagement.app.getController('UserProfile');
-        user_profile_controller.configure_paths_and_variables(user_details_paths,config_variables);
+//        var user_profile_controller = UserManagement.app.getController('UserProfile');
+        var addressBook_controller = UserManagement.app.getController('AddressBook');
+        addressBook_controller.configure_paths_and_variables(user_details_paths,config_variables);
 
-        user_profile_controller.getUserDetails();
+        addressBook_controller.getUserDetails();
 
         Ext.create('Ext.panel.Panel',{
             title:'Profile Completeness',

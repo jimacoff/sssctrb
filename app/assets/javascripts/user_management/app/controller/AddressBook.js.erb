@@ -305,11 +305,13 @@ Ext.define('UserManagement.controller.AddressBook', {
 
           });
 
+          var leadUser = thisControllerRef.getLeadUser();
+
           // Select the Lead user in the AddressBook
-          addressBookTreePanel.fireEvent('selectLeadUser',2);
+          addressBookTreePanel.fireEvent('selectLeadUser',leadUser.get('id'));
 
       });
 
-  },
+  }
 
 });

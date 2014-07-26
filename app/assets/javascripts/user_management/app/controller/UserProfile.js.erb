@@ -91,6 +91,11 @@ Ext.define('UserManagement.controller.UserProfile', {
         var replacedString = urlString.replace('{user_id}',user_id);
         return replacedString;
     },
+    getLeadUser:function(){
+        var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+        leadUser = user_details_store.findRecord('dependent_user_id',0);
+        return leadUser;
+    },
   getUserDetails:function(callbackFunction){
       // Get the complete User Details
       var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();

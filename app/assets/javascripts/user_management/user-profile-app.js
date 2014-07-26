@@ -1,4 +1,8 @@
 // create a new instance of Application class
+
+Ext.Loader.setConfig({enabled: true});
+Ext.Loader.setPath('Ext.ux', '../ux');
+
 Ext.application({
     // the global namespace
     name: 'UserManagement',

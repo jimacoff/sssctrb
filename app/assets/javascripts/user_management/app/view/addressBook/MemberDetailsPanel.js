@@ -21,9 +21,14 @@ Ext.define('UserManagement.view.addressBook.MemberDetailsPanel',{
                         itemId:'userPersonalDetailsId'
                     },
                     {
-                        xtype:'passportVisaDetails',
-                        title:'Passport / Visa Details',
-                        itemId:'passportVisaDetailsId'
+                        xtype:'passportDetails',
+                        title:'Passport Details',
+                        itemId:'passportDetailsId'
+                    },
+                    {
+                        xtype:'visaDetails',
+                        title:'Visa Details',
+                        itemId:'visaDetailsId'
                     },
                     {
                         xtype:'arrivalAndOtherInformation',

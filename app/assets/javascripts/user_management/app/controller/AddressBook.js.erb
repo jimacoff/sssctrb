@@ -5,12 +5,14 @@ Ext.define('UserManagement.controller.AddressBook', {
   views: [
       'UserManagement.view.addressBook.AddressBookTreePanel',
       'UserManagement.view.addressBook.MemberDetailsPanel',
-      'UserManagement.view.addressBook.PassportVisaDetails',
+      'UserManagement.view.addressBook.PassportDetails',
+      'UserManagement.view.addressBook.VisaDetails',
       'UserManagement.view.addressBook.ArrivalAndOtherInformation'
   ],
 
   models:[
     'UserManagement.model.UserProfile.AddressBookModel',
+    'UserManagement.model.UserProfile.VisaDetails'
 //    'UserManagement.model.UserProfile.UserProfileDetails',
 //    'UserManagement.model.UserProfile.User',
 //    'UserManagement.model.UserProfile.NonIndianSpecificDetails',
@@ -44,7 +46,11 @@ Ext.define('UserManagement.controller.AddressBook', {
       {
           selector: 'memberDetailsPanel form[itemId="passportDetails"]',
           ref: 'passportForm'
-      }
+      },
+      {
+          selector: 'nonIndianVisaDetailsGrid',
+          ref: 'visaGrid'
+      },
   ],
 
   init: function() {
@@ -66,14 +72,24 @@ Ext.define('UserManagement.controller.AddressBook', {
                   click:this.userOperations,
               },
               'memberDetailsPanel':{
-                    afterrender:this.populateUserInfo
+                  afterrender:this.populateUserInfo
               },
               'memberDetailsPanel button[itemId="Save"]':{
                   click:this.saveMemberDetails
               },
+              'nonIndianVisaDetailsGrid button':{
+                  click:this.visaOperation
+              },
               'configure_paths':this.configure_paths
           }
       });
+  },
+  visaOperation:function(button){
+      if(button.itemId == 'addVisa'){
+          this.addNewVisa(button);
+      }else if(button.itemId == 'deleteVisa'){
+          this.deleteVisa(button);
+      }
   },
   userOperations:function(button){
     if(button.itemId == 'addUser'){
@@ -81,6 +97,13 @@ Ext.define('UserManagement.controller.AddressBook', {
     }else if(button.itemId == 'deleteUser'){
         this.deleteUser();
     }
+  },
+  addNewVisa:function(button){
+    var visaGrid = button.up('.grid');
+    var newVisa = Ext.create('UserManagement.model.UserProfile.VisaDetails',{});
+    visaGrid.getStore().insert(0,newVisa);
+    visaGrid.getView().refresh();
+    visaGrid.editingPlugin.startEdit(newVisa,1);
   },
   addUserMember:function(){
       var newUser = Ext.create('UserManagement.model.UserProfile.User',{id:0})
@@ -198,16 +221,14 @@ Ext.define('UserManagement.controller.AddressBook', {
   },
   selectuser:function(thisElement, record, item, index, e, eOpts){
       var userId = record.get('id');
-      var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
 
-      console.log(user_details_store.getRange());
+      if(userId != 'root'){
+          var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+          var selectedUser = user_details_store.findRecord('id',userId);
 
-      var selectedUser = user_details_store.findRecord('id',userId);
-
-      console.log(selectedUser.personal_detail)
-
-      if(selectedUser){
-          this.loadUserRecordInView(selectedUser);
+          if(selectedUser){
+              this.loadUserRecordInView(selectedUser);
+          }
       }
   },
   loadUserRecordInView:function(userRecord){

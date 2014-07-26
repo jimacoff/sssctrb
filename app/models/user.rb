@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_one :personal_detail,:foreign_key => 'user_id'
   has_one :non_indian_specific_detail,:foreign_key => 'user_id'
 
+  has_many :visas
+
   accepts_nested_attributes_for :personal_detail,
                                 :non_indian_specific_detail
 

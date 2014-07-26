@@ -39,13 +39,22 @@ Ext.define('UserManagement.model.UserProfile.User', {
       associatedName:'personal_detail'
     },
     {
-      type:'hasOne',
-      instanceName:'non_indian_specific_detail',
-      model:'UserManagement.model.UserProfile.NonIndianSpecificDetails',
-      getterName:'getNonIndianSpecificDetail',
+        type:'hasOne',
+        instanceName:'non_indian_specific_detail',
+        model:'UserManagement.model.UserProfile.NonIndianSpecificDetails',
+        getterName:'getNonIndianSpecificDetail',
 //      setterName:'setIndianNationalInfo',
-      associationKey:'non_indian_specific_detail',
-      associatedName:'non_indian_specific_detail'
+        associationKey:'non_indian_specific_detail',
+        associatedName:'non_indian_specific_detail'
+    },
+    {
+      type:'hasMany',
+      instanceName:'visaDetails',
+      model:'UserManagement.model.UserProfile.VisaDetails',
+      getterName:'getVisaDetails',
+//      setterName:'setIndianNationalInfo',
+      associationKey:'visa_details',
+      associatedName:'visa_details'
     }
 //      ,{
 //          type:'hasOne',

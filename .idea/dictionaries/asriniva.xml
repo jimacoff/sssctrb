@@ -2,11 +2,17 @@
   <dictionary name="asriniva">
     <words>
       <w>afterrender</w>
+      <w>datecolumn</w>
+      <w>datefield</w>
       <w>pincode</w>
+      <w>rowmodel</w>
       <w>selectuser</w>
       <w>signin</w>
       <w>strech</w>
+      <w>templatecolumn</w>
+      <w>textfield</w>
       <w>vbox</w>
+      <w>visatype</w>
       <w>xtype</w>
     </words>
   </dictionary>

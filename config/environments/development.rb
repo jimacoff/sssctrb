@@ -29,7 +29,7 @@ SSSCTRoomBooking::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'http://desolate-taiga-2994.herokuapp.com:3000' }
+  config.action_mailer.default_url_options = { :host => 'http://desolate-taiga-2994.herokuapp.com' }
 
   Paperclip.options[:command_path] = "/usr/bin/"
 

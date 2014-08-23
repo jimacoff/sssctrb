@@ -15,35 +15,27 @@ var verificationStore = Ext.create('Ext.data.Store', {
 });
 
 Ext.define('UserManagement.view.users.IndianSpecificDetails',{
-    extend:'Ext.form.FieldSet',
+    extend:'Ext.form.Panel',
     alias : 'widget.indianSpecificDetails',
-    itemId:'indianSpecificDetailsId',
     items:[
         {
-            xtype:'fieldcontainer',
-            fieldLabel:'Verification',
-            layout:'vbox',
-            items:[
-                {
-                    xtype:'combo',
-                    flex:1,
-                    fieldLabel:'Id Proof',
-                    name:'indianNational[verification_id_proof]',
-                    store:verificationStore,
-                    displayField:'value',
-                    valueField:'value',
-                    query:'local',
-                    msgTarget:'side',
-                },
-                {
-                    xtype:'textfield',
-                    flex:1,
-                    name:'indianNational[verification_id_number]',
-                    fieldLabel:'Id Number',
-                    msgTarget:'side',
-                    allowBlank:false,
-                }
-            ]
+            xtype:'combo',
+            flex:1,
+            fieldLabel:'Id Proof',
+            name:'verification_id_type_id',
+            store:'UserManagement.store.VerificationIdTypes',
+            displayField:'verification_id_type_name',
+            valueField:'id',
+            query:'local',
+            msgTarget:'side'
         },
+        {
+            xtype:'textfield',
+            flex:1,
+            name:'verification_id_number',
+            fieldLabel:'Id Number',
+            msgTarget:'side',
+            allowBlank:false
+        }
     ]
 })

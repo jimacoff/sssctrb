@@ -1,11 +1,15 @@
 Ext.define('UserManagement.controller.Users', {
   extend: 'Ext.app.Controller',
 
-  stores: ['UsersStore'],
+  stores: [
+      'UsersStore',
+      'UserGroups'
+  ],
   models: [
       'UserManagement.model.User',
       'UserManagement.model.IndianNationalUser',
-      'UserManagement.model.UserProfile.VisaDetails'
+      'UserManagement.model.UserProfile.VisaDetails',
+      'UserManagement.model.UserGroup'
   ],
 
   views: [
@@ -20,7 +24,8 @@ Ext.define('UserManagement.controller.Users', {
       'UserManagement.view.users.NonIndianSpecificDetails.ArrivalInformation',
       'UserManagement.view.users.NonIndianSpecificDetails.AddressReferenceInIndia',
       'UserManagement.view.users.NonIndianSpecificDetails.OtherDetails',
-      'UserManagement.view.users.NonIndianSpecificDetails.VisaDetailsGrid'
+      'UserManagement.view.users.NonIndianSpecificDetails.VisaDetailsGrid',
+      'UserManagement.view.users.NRIDetails'
   ],
 
   refs: [{
@@ -49,12 +54,28 @@ Ext.define('UserManagement.controller.Users', {
           afterrender: this.getAllUsers
       },
       'signUpForm':{
-//          afterrender: this.
+          beforerender: this.loadDefault
       },
       'signUpForm button[itemId="form_submit"]': {
-          click: this.saveUser,
-      },
+          click: this.saveUser
+      }
     });
+  },
+    loadDefault:function(){
+
+      var authencityTokenParam = $('meta[name="csrf-token"]').attr('content');
+
+      userGroupStore = this.getUserGroupsStore();
+      console.log(userGroupStore);
+      userGroupStore.load({
+          params:{
+              authenticity_token:authencityTokenParam
+          },
+          success:function(){
+          },
+          scope:this
+      });
+
   },
   getAllUsers: function(allusersGrid,eOpts){
       var usersStore = allusersGrid.getStore();

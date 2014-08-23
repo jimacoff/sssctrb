@@ -9,25 +9,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     #userParams = params[:user]
-    jsonResponse = {}
 
     #newUserParams = JSON.parse!(userParams)
     #puts "newUserParams : #{newUserParams}"
 
+    #user_group_id = userParams[:user_group_id]
+
+    #if user_group_id == 2
+    #  IndianUser.new(userParams)
+    #elsif user_group_id == 3 || user_group_id == 4
+    #
+    #elsif user_group_id == 5
+    #
+    #end
+
     @newUser = User.new(user_params)
-    @newUser.role_id = 2
 
     if(@newUser.valid?)
 
       @newUser.save
-      #newIndianNational.users_id = @newUser.id
-      #
-      #newIndianNational.save
-
-      #UserMailer.welcome_user(@newUser).deliver
-
-      #sign_in("user", @newUser)
-      #puts "New U"
 
       render :json=> {
         :success=>true,
@@ -82,15 +82,11 @@ private
 
 def user_params
   params.require(:user).permit(
-      :photo,
-      :indian,
       :email,
       :password,
       :first_name,
       :last_name,
-      :dob,
-      :gender,
-      :nationality,
+      :user_group_id
   )
 end
 

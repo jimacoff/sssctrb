@@ -7,6 +7,7 @@ Ext.define('UserManagement.model.UserProfile.User', {
     { name: 'last_name', type: 'string'},
     { name: 'nationality', type: 'int'},
     { name: 'dependent_user_id', type: 'int'},
+    { name: 'user_group_id', type: 'int'},
 
     { name: 'full_name', type: 'string' ,
         convert:function(newValue,record){
@@ -38,45 +39,25 @@ Ext.define('UserManagement.model.UserProfile.User', {
       associationKey:'personal_detail',
       associatedName:'personal_detail'
     },
-    {
-        type:'hasOne',
-        instanceName:'non_indian_specific_detail',
-        model:'UserManagement.model.UserProfile.NonIndianSpecificDetails',
-        getterName:'getNonIndianSpecificDetail',
-//      setterName:'setIndianNationalInfo',
-        associationKey:'non_indian_specific_detail',
-        associatedName:'non_indian_specific_detail'
-    },
-    {
-      type:'hasMany',
-      instanceName:'visaDetails',
-      model:'UserManagement.model.UserProfile.VisaDetails',
-      getterName:'getVisaDetails',
-//      setterName:'setIndianNationalInfo',
-      associationKey:'visa_details',
-      associatedName:'visa_details'
-    }
-//      ,{
-//          type:'hasOne',
-//          instanceName:'passportDetail',
-////      model:'UserManagement.model.UserProfile.NonIndianSpecificDetails',
-//          model:'UserManagement.model.UserProfile.PassportDetails',
-//          getterName:'getpassportDetail',
-//          associationKey:'passportDetail',
-//          associatedName:'passportDetail'
-//      }
-  ],
-//    constructor: function(data) {
-//        this.callParent([data]);
-//        var proxy = this.getProxy();
-//        if (proxy) {
-//            var reader = proxy.getReader();
-//            if (reader) {
-//                // this function is crucial... otherwise, the associations are not populated
-//                reader.readAssociated(this, data);
-//            }
-//        }
+//    {
+//        type:'hasOne',
+//        instanceName:'non_indian_specific_detail',
+//        model:'UserManagement.model.UserProfile.NonIndianSpecificDetails',
+//        getterName:'getNonIndianSpecificDetail',
+////      setterName:'setIndianNationalInfo',
+//        associationKey:'non_indian_specific_detail',
+//        associatedName:'non_indian_specific_detail'
 //    },
+//    {
+//      type:'hasMany',
+//      instanceName:'visaDetails',
+//      model:'UserManagement.model.UserProfile.VisaDetails',
+//      getterName:'getVisaDetails',
+////      setterName:'setIndianNationalInfo',
+//      associationKey:'visa_details',
+//      associatedName:'visa_details'
+//    }
+  ],
     proxy: {
         type: 'ajax',
 //        url:'/get_all_users',

@@ -12,8 +12,6 @@ class LoginController < ApplicationController
         puts "current_user email ==>",current_user
         redirect_to :controller => 'home'
       end
-      #result["user"] = user
-      #render json: result
     end
 
   end

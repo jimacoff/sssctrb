@@ -47,6 +47,8 @@ SSSCTRoomBooking::Application.routes.draw do
   get "home/sample"
 
   get 'get_all_users', to:'home#all_users'
+  get 'get_user_groups', to:'home#get_user_groups'
+  get 'get_verification_types',to:'home#get_verification_types'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

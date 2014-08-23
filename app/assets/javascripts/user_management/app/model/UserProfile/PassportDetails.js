@@ -17,5 +17,5 @@ Ext.define('UserManagement.model.UserProfile.PassportDetails', {
         { name: 'user_id', type: 'string'},
 
         { name: 'updated_at', type: 'string' },
-    ],
+    ]
 });

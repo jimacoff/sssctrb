@@ -2,6 +2,7 @@
 
 Ext.define('UserManagement.controller.AddressBook', {
   extend: 'UserManagement.controller.UserProfile',
+  loadedUserStore:null,
   views: [
       'UserManagement.view.addressBook.AddressBookTreePanel',
       'UserManagement.view.addressBook.MemberDetailsPanel',
@@ -12,13 +13,15 @@ Ext.define('UserManagement.controller.AddressBook', {
 
   models:[
     'UserManagement.model.UserProfile.AddressBookModel',
-    'UserManagement.model.UserProfile.VisaDetails'
+    'UserManagement.model.UserProfile.VisaDetails',
+    'UserManagement.model.VerificationIdType'
 //    'UserManagement.model.UserProfile.UserProfileDetails',
 //    'UserManagement.model.UserProfile.User',
 //    'UserManagement.model.UserProfile.NonIndianSpecificDetails',
   ],
   stores:[
     'UserManagement.store.UserProfile.AddressBookStore',
+    'UserManagement.store.VerificationIdTypes'
 //    'UserManagement.store.UserProfile.UsersStore'
   ],
 
@@ -46,6 +49,10 @@ Ext.define('UserManagement.controller.AddressBook', {
       {
           selector: 'memberDetailsPanel form[itemId="passportDetails"]',
           ref: 'passportForm'
+      },
+      {
+          selector: 'memberDetailsPanel form[itemId="verificationProofId"]',
+          ref: 'verificationProof'
       },
       {
           selector: 'nonIndianVisaDetailsGrid',
@@ -106,7 +113,31 @@ Ext.define('UserManagement.controller.AddressBook', {
     visaGrid.editingPlugin.startEdit(newVisa,1);
   },
   addUserMember:function(){
-      var newUser = Ext.create('UserManagement.model.UserProfile.User',{id:0})
+      var user_group_id = this.config_variables["user_group_id"];
+      var newUser = null;
+      if(user_group_id == 2){
+          newUser =
+              Ext.create('UserManagement.model.UserProfile.IndianUser',
+                  {
+                      id:0,
+                      user_group_id:user_group_id
+                  });
+      }else if( [3,4].indexOf(user_group_id) != -1){
+          newUser =
+              Ext.create('UserManagement.model.UserProfile.NRIUser',
+                  {
+                      id:0,
+                      user_group_id:user_group_id
+                  });
+      }else if(user_group_id == 5){
+          newUser =
+              Ext.create('UserManagement.model.UserProfile.OverseasUser',
+                  {
+                      id:0,
+                      user_group_id:user_group_id
+                  });
+      }
+
       this.deselectUserinAddressBook();
       this.loadUserRecordInView(newUser);
   },
@@ -117,11 +148,25 @@ Ext.define('UserManagement.controller.AddressBook', {
       var authencityTokenParam = $('meta[name="csrf-token"]').attr('content');
 
       this.getUserForm().getForm().updateRecord();
-      this.getPassportForm().getForm().updateRecord();
       this.getPersonalDetailsForm().getForm().updateRecord();
-
       var userRecord = this.getUserForm().getForm().getRecord();
+      console.log(userRecord);
+
+      var verificationRecord;
+
       var user_id = userRecord.get('id');
+      var user_group_id = this.config_variables["user_group_id"] //userRecord.get('user_group_id');
+      if([2,3,4].indexOf(user_group_id) != -1 ){
+        // Indian, NRI and Nepal/Bhutan Users
+        verificationForm = this.getVerificationProof().getForm();
+        verificationForm.updateRecord();
+        verificationRecord = verificationForm.getRecord();
+      }else if(user_group_id == 5){
+        // Overseas Users
+        var passportForm = this.getPassportForm().getForm()
+        passportForm.updateRecord();
+        var passportRecord = passportForm.getRecord();
+      }
 
       var operation = "edit"
 
@@ -130,7 +175,10 @@ Ext.define('UserManagement.controller.AddressBook', {
           userRecord.set('dependent_user_id',this.config_variables["user_id"])
       }
 
-      userRecordData = Ext.encode(userRecord.getData(true));
+      userData = userRecord.getData(true);
+      userRecordData = Ext.encode(userData);
+
+      console.log(userRecordData)
 
       form_submit_path = "<%=CGI.unescape url_helper.save_member_details_path('{user_id}')%>";
       url_path = this.getUrlWithUserId(form_submit_path,user_id)
@@ -166,47 +214,6 @@ Ext.define('UserManagement.controller.AddressBook', {
           }
       });
 
-//      var userPersonalDetailsTab = memberDetailsPanel.down('#userPersonalDetailsId');
-//      var userPersonalDetailsRecord = userPersonalDetailsTab.getForm().getRecord();
-//      var user_id = userPersonalDetailsRecord.get('personal_detail[user_id]');
-//
-//      var mainMemberDetails = userPersonalDetailsRecord.user;
-//      var mainMemberDetailsData = mainMemberDetails.getData(true);
-//
-//      var memberDetailsForm = memberDetailsPanel.getForm();
-//
-//      memberDetailsSubmitPath = this.user_details_paths["save_member_details_path"]+user_id;
-//
-//
-//      memberDetailsForm.submit({
-//          url:memberDetailsSubmitPath,
-//          params:{
-//              authenticity_token:authencityTokenParam,
-////              user:mainMemberDetailsData //Ext.encode(mainMemberDetailsData)
-//              userMemberDetails:Ext.encode(mainMemberDetailsData)
-//          },
-//          waitMsg: 'Saving User Details ...',
-//          success:function(form,action){
-//              var result = action.result;
-//
-//              var result_message = result.message;
-//
-//              Ext.Msg.show({
-//                  title:'Alert',
-//                  msg:result_message,
-//                  buttons:Ext.Msg.OK
-//              });
-//          },
-//          failure:function(form,action){
-//              var result_message = action.result.message;
-//              Ext.Msg.show({
-//                  title:'Alert',
-//                  msg:result_message,
-//                  buttons:Ext.Msg.OK
-//              });
-//          }
-//      })
-
   },
   deselectUserinAddressBook:function(){
       var addressBookTree = this.getAddressBookTree();
@@ -221,13 +228,18 @@ Ext.define('UserManagement.controller.AddressBook', {
   },
   selectuser:function(thisElement, record, item, index, e, eOpts){
       var userId = record.get('id');
+      console.log(record);
 
-      if(userId != 'root'){
-          var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
-          var selectedUser = user_details_store.findRecord('id',userId);
+      console.log(this);
 
-          if(selectedUser){
-              this.loadUserRecordInView(selectedUser);
+      if(this.loadedUserStore){
+          if(userId != 'root'){
+    //          var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+              var selectedUser = this.loadedUserStore.findRecord('id',userId);
+
+              if(selectedUser){
+                  this.loadUserRecordInView(selectedUser);
+              }
           }
       }
   },
@@ -238,8 +250,6 @@ Ext.define('UserManagement.controller.AddressBook', {
       this.getUserForm().getForm().loadRecord(userRecord);
 
       personalDetail = userRecord.personal_detail
-
-      console.log("In load User in View : "+personalDetail);
 
       if(!personalDetail){
           personalDetail = Ext.create('UserManagement.model.UserProfile.UserProfileDetails',
@@ -253,17 +263,41 @@ Ext.define('UserManagement.controller.AddressBook', {
 
       this.getPersonalDetailsForm().getForm().loadRecord(personalDetail);
 
-      // Load the passport / Visa Details Tab
-      var passportDetails = this.getPassportForm();
-      non_indian_specific_detail = userRecord.non_indian_specific_detail
-      if(!non_indian_specific_detail){
-        non_indian_specific_detail
-            = Ext.create('UserManagement.model.UserProfile.NonIndianSpecificDetails')
+      if(this.config_variables["user_group_id"] == 2){
+          // Load Indian Verification Details Tab
+          verification_id_detail = userRecord.verification_id_detail;
+          if(!verification_id_detail){
+              verification_id_detail
+                = Ext.create('UserManagement.model.UserProfile.VerificationIdDetails',{verification_id_type_id:1})
+          }
 
-        userRecord.non_indian_specific_detail = non_indian_specific_detail
+          userRecord.verification_id_detail = verification_id_detail
+          this.getVerificationProof().getForm().loadRecord(userRecord.verification_id_detail);
+
+      }if([3,4].indexOf(this.config_variables["user_group_id"]) != -1){
+          // Load Customized Verification Tab for NRI, Nepal/Bhutan
+          nri_detail = userRecord.nri_detail;
+          if(!nri_detail){
+              nri_detail
+                  = Ext.create('UserManagement.model.UserProfile.NRIDetails',{verification_id_type_id:4});
+          }
+
+          userRecord.nri_detail = nri_detail
+          this.getVerificationProof().getForm().loadRecord(userRecord.nri_detail);
+
+      }else if(this.config_variables["user_group_id"] == 5){
+          // Load the passport / Visa Details Tab
+          var passportDetails = this.getPassportForm();
+          passport_detail = userRecord.passport_detail
+          if(!passport_detail){
+              passport_detail
+                = Ext.create('UserManagement.model.UserProfile.PassportDetails')
+
+            userRecord.passport_detail = passport_detail
+          }
+
+          passportDetails.getForm().loadRecord(passport_detail);
       }
-
-      passportDetails.getForm().loadRecord(non_indian_specific_detail);
   },
   populateUserInfo:function(){
       var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
@@ -273,7 +307,18 @@ Ext.define('UserManagement.controller.AddressBook', {
       // Populate the addressbook from the user store itself.
       var thisControllerRef = this;
 
-      this.getUserDetails(function(){
+      if(this.config_variables["user_group_id"] == 2){
+          this.loadedUserStore
+             = thisControllerRef.getUserManagementStoreUserProfileIndianUsersStoreStore();
+      }else if([3,4].indexOf(this.config_variables["user_group_id"]) != -1){
+          this.loadedUserStore
+             = thisControllerRef.getUserManagementStoreUserProfileNRIUsersStoreStore();
+      }else if(this.config_variables["user_group_id"] == 5){
+          this.loadedUserStore
+             = thisControllerRef.getUserManagementStoreUserProfileOverseasUsersStoreStore();
+      }
+
+      this.getUserDetails(thisControllerRef.loadedUserStore,function(){
           var addressBookPanel = thisControllerRef.getAddressBookTreePanel();
           var addressBookTreePanel =
               addressBookPanel.down('#addressBookId');
@@ -287,11 +332,9 @@ Ext.define('UserManagement.controller.AddressBook', {
           };
 
           addressBookTreePanel.setRootNode(addressBookRootNode);
-          var user_details_store = thisControllerRef.getUserManagementStoreUserProfileUsersStoreStore();
-
           var abRootnode = addressBookTreePanel.getRootNode();
 
-          user_details_store.each(function(eachAddress){
+          thisControllerRef.loadedUserStore.each(function(eachAddress){
               var childNode;
 
               childNode = {
@@ -305,7 +348,9 @@ Ext.define('UserManagement.controller.AddressBook', {
 
           });
 
-          var leadUser = thisControllerRef.getLeadUser();
+          var leadUser = thisControllerRef.getLeadUser(thisControllerRef.loadedUserStore);
+          console.log(thisControllerRef.loadedUserStore);
+          console.log(leadUser);
 
           // Select the Lead user in the AddressBook
           addressBookTreePanel.fireEvent('selectLeadUser',leadUser.get('id'));

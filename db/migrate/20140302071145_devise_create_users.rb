@@ -35,15 +35,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :last_name
 
       t.integer   :nationality
+      t.integer   :dependent_user_id, :default => 0
 
-      t.references :role
+      #t.references :role
+      t.references :user_group
 
       t.timestamps
     end
 
-    add_index :users, :email,                :unique => true
-    add_index :users, :reset_password_token, :unique => true
-    add_index :users, :confirmation_token, :unique => true
+    add_index :users, :email,                 :unique => true
+    add_index :users, :reset_password_token,  :unique => true
+    add_index :users, :confirmation_token,    :unique => true
     # add_index :users, :unlock_token,         :unique => true
 
     User.create(
@@ -52,7 +54,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
         last_name:"Srinivasan",
         nationality:1,
         password:"Sairam9999",
-        role_id:1
+        user_group_id:1
     )
 
   end

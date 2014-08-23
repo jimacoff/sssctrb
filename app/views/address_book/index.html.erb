@@ -14,7 +14,8 @@
       };
 
       var config_variables = {
-          "user_id":<%=current_user.id%>
+          "user_id":<%=current_user.id%>,
+          "user_group_id":<%=current_user.user_group_id%>
       }
 
 //      var user_profile_controller = UserManagement.app.getController('UserProfile');
@@ -49,40 +50,11 @@
                 },
                 {
                     xtype:'memberDetailsPanel',
-                    flex:5,
-//                    autoScroll:true
+                    user_group:<%=current_user.user_group_id%>,
+                    flex:5
                 }
-//                {
-//                    xtype:'panel',
-//                    title:'Member Details',
-//                    flex:5,
-//                    items:[
-//                        {
-//                            xtype:'memberDetailsPanel'
-//                        }
-//                    ]
-//                }
-            ],
-//            initComponent:function(){
-//                var me = this;
-//                me.items = [
-//                    {
-//                        xtype:'panel',
-//                        title:'Address Book Tree',
-//                        flex:1
-//                    },
-//                    {
-//                        xtype:'panel',
-//                        title:'Member Details',
-//                        flex:5,
-//                    }
-//                ];
-//
-//                me.callParent();
-//
-//            }
+            ]
         })
-
 
   })
 </script>

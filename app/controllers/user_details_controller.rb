@@ -2,13 +2,28 @@ class UserDetailsController < ApplicationController
 
   def get_user_details
     main_user_id =params[:id]
-    users = User.where("id = ? or dependent_user_id = ?", main_user_id, main_user_id)
-
+    getMainUserGroupId = User.find(main_user_id).user_group_id
+    users = nil
     #userjson = users.to_json(:include => [:personal_detail,:non_indian_specific_detail])
     ActiveRecord::Base.include_root_in_json = false
+    includeTables = [:personal_detail]
 
-    json_user_data = users.to_json(:include => [:personal_detail,:non_indian_specific_detail])
-    puts 'json_user_data',json_user_data.inspect
+
+    if getMainUserGroupId == 2
+      users = IndianUser.where("id = ? or dependent_user_id = ?", main_user_id, main_user_id)
+      includeTables.push(:verification_id_detail)
+    elsif getMainUserGroupId == 3
+      users = NRIUser.where("id = ? or dependent_user_id = ?", main_user_id, main_user_id)
+      includeTables.push(:nri_detail)
+    elsif getMainUserGroupId == 4
+      users = NepalBhutanUser.where("id = ? or dependent_user_id = ?", main_user_id, main_user_id)
+      includeTables.push(:nri_detail)
+    elsif getMainUserGroupId == 5
+      users = OverseasUser.where("id = ? or dependent_user_id = ?", main_user_id, main_user_id)
+      includeTables.push(:passport_detail)
+    end
+
+    json_user_data = users.to_json(:include => includeTables)
 
     render :json => json_user_data
 

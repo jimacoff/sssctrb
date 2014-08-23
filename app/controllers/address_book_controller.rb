@@ -25,52 +25,77 @@ class AddressBookController < ApplicationController
     message = ""
 
     userMemberDetails = params[:userDetails]
-    parsedUserMemberDetails = JSON.parse(userMemberDetails);
+    parsedUserMemberDetails = JSON.parse(userMemberDetails)
+
+    user_group_id = parsedUserMemberDetails["user_group_id"]
 
     #begin
-      if(params[:operation] == "add")
-        user_to_be_saved = DependentUser.new(new_user_params(parsedUserMemberDetails))
+      if params[:operation] == "add"
+        user_to_be_saved = nil
+
+        if user_group_id == 2
+          user_to_be_saved =
+              DependentUsers::IndianUser.new(
+                  new_user_params(parsedUserMemberDetails)
+              )
+
+        elsif user_group_id == 3 || user_group_id == 4
+          user_to_be_saved =
+              DependentUsers::NRIUser.new(
+                  new_user_params(parsedUserMemberDetails)
+              )
+
+        elsif user_group_id == 5
+          user_to_be_saved =
+              DependentUsers::OverseasUser.new(
+                  new_user_params(parsedUserMemberDetails)
+              )
+
+        end
+
+        puts user_to_be_saved.inspect
+
         user_to_be_saved.update(
             {
                 :dependent_user_id => current_user.id,
-                :email => getRandomNumber
+                :email => getRandomNumber,
+                :user_group_id => current_user.user_group_id
             }
         )
-        user_to_be_saved.personal_detail.update({:user_id => user_to_be_saved.id})
-        user_to_be_saved.non_indian_specific_detail.update({:user_id => user_to_be_saved.id})
-
         user_to_be_saved.save
         user_to_be_saved.create_personal_detail(user_personal_details_params(user_to_be_saved.personal_detail))
+        #user_to_be_saved.personal_detail.update({:user_id => user_to_be_saved.id})
 
-        user_to_be_saved.create_non_indian_specific_detail(user_to_be_saved.non_indian_specific_detail)
+        if user_group_id == 2
 
-        user_to_be_saved.reload
+          puts "verification_id_detail : ",parsedUserMemberDetails["verification_id_detail"]
 
-        puts "User Id : ",user_to_be_saved.id
-        puts "user_to_be_saved : ",user_to_be_saved.inspect
-        puts 'Personal Details : ',user_to_be_saved.personal_detail.inspect
-        puts "Non Indian Details : ",user_to_be_saved.non_indian_specific_detail.inspect
+          user_to_be_saved.create_verification_id_detail(
+              user_verification_proof_params(
+                  parsedUserMemberDetails["verification_id_detail"]
+              )
+          )
+        elsif user_group_id == 3 || user_group_id == 4
+          puts "nri_detail : ",parsedUserMemberDetails["nri_detail"]
 
-
-        #new_user = DependentUser.create(new_user_param_values)
-        #puts "new_user : ",new_user.inspect
-
-        #personal_detail_param = user_personal_details_params(parsedUserMemberDetails["personal_detail"])
-        #puts "User_id : ",personal_detail_param[:user_id]
-        #
-        #new_user.create_personal_detail(personal_detail_param)
-        #
-        #new_user.create_non_indian_specific_detail(user_non_indian_specific_details_params(parsedUserMemberDetails["non_indian_specific_detail"]))
-        #
-        ##puts "user_to_be_saved : ",user_to_be_saved.inspect
-        #puts "New User: ",new_user.personal_detail,new_user.non_indian_specific_detail
-        #user_to_be_saved.save
-
-        #puts "user_to_be_saved :",user_to_be_saved.inspect
+          user_to_be_saved.create_nri_detail(
+              user_verification_proof_params(
+                  parsedUserMemberDetails["nri_detail"]
+              )
+          )
+        elsif user_group_id == 5
+          puts "nri_detail : ",parsedUserMemberDetails["passport_detail"]
+          user_to_be_saved.create_passport_detail(
+              user_passport_details_params(
+                  parsedUserMemberDetails["passport_detail"]
+              )
+              #user_to_be_saved.passport_detail
+          )
+        end
 
       else
-        user_to_be_saved = User.find_by_id(parsedUserMemberDetails["id"])
 
+        user_to_be_saved = User.get_user(parsedUserMemberDetails["id"])
         permitted_user_details = user_params(parsedUserMemberDetails)
         user_to_be_saved.update(permitted_user_details)
 
@@ -81,11 +106,67 @@ class AddressBookController < ApplicationController
           user_to_be_saved.create_personal_detail(user_personal_details_params(parsedUserMemberDetails["personal_detail"]))
         end
 
-        non_indian_specific_detail_record = user_to_be_saved.non_indian_specific_detail
-        if(non_indian_specific_detail_record)
-          non_indian_specific_detail_record.update(user_non_indian_specific_details_params(parsedUserMemberDetails["non_indian_specific_detail"]))
-        else
-          user_to_be_saved.create_non_indian_specific_detail(user_non_indian_specific_details_params(parsedUserMemberDetails["non_indian_specific_detail"]))
+        # Nationality Specific User Details
+        user_to_be_saved = User.find_by_id(parsedUserMemberDetails["id"])
+        if user_to_be_saved.indian?
+
+          ## Convert User class to Indian class
+          indianUser = user_to_be_saved.becomes(IndianUser)
+
+          verification_proof_record = indianUser.verification_id_detail
+          if(verification_proof_record)
+            verification_proof_record.
+                update(
+                  user_verification_proof_params(
+                    parsedUserMemberDetails["verification_id_detail"]
+                  )
+                )
+          else
+            indianUser.create_verification_id_detail(
+              user_verification_proof_params(
+                  parsedUserMemberDetails["verification_id_detail"]
+              )
+            )
+          end
+        elsif user_to_be_saved.nri?
+          ## Convert User class to Indian class
+          nriUser = user_to_be_saved.becomes(NRIUser)
+
+          nri_detail_record = nriUser.nri_detail
+          if(nri_detail_record)
+            nri_detail_record.
+                update(
+                user_verification_proof_params(
+                    parsedUserMemberDetails["nri_detail"]
+                )
+            )
+          else
+            nriUser.create_nri_detail(
+                user_verification_proof_params(
+                    parsedUserMemberDetails["nri_detail"]
+                )
+            )
+          end
+
+        elsif user_to_be_saved.others?
+          ## Save Oveseas Devotees Information
+          overseasUser = user_to_be_saved.becomes(OverseasUser)
+
+          user_passport_detail = overseasUser.passport_detail
+          if(user_passport_detail)
+            user_passport_detail.update(
+                user_passport_details_params(
+                    parsedUserMemberDetails["passport_detail"]
+                )
+            )
+          else
+            overseasUser.create_passport_detail(
+                user_passport_details_params(
+                    parsedUserMemberDetails["passport_detail"]
+                )
+            )
+          end
+
         end
 
       end
@@ -128,10 +209,11 @@ class AddressBookController < ApplicationController
     )
   end
 
-  def user_non_indian_specific_details_params(non_indian_specific_hash)
-    non_indian_specific_params = ActionController::Parameters.new(non_indian_specific_hash)
+  def user_passport_details_params(passport_details_hash)
+    passport_details_params =
+      ActionController::Parameters.new(passport_details_hash)
 
-    non_indian_specific_params.except(
+    passport_details_params.except(
         :updated_at,:id
     ).permit(
         :passport_number,
@@ -143,12 +225,26 @@ class AddressBookController < ApplicationController
     )
   end
 
+  def user_verification_proof_params(verification_proof_hash)
+    verification_proof_params =
+        ActionController::Parameters.new(verification_proof_hash)
+
+    verification_proof_params.except(
+        :user_id,:id
+    ).permit(
+        :verification_id_number,
+        :verification_id_type_id,
+        :date_of_entry_into_india
+    )
+  end
+
   def user_params(user_param_hash)
     user_params = ActionController::Parameters.new(user_param_hash)
 
     user_params.except(
         :personal_detail,:non_indian_specific_detail,:email,:nationality,
-        :dependent_user_id,:full_name,:gender_age
+        :dependent_user_id,:full_name,:gender_age,:user_group_id,:visa_details,
+        :verification_id_details
     ).permit(
         :id,
         :first_name,
@@ -163,33 +259,10 @@ class AddressBookController < ApplicationController
         :full_name,
         :gender_age,
         :email, :nationality,
+        :verification_id_detail,
+        :passport_detail,
+        :nri_detail
     ).permit!
-
-    #user_params.except(
-    #    :full_name,
-    #    :gender_age,
-    #    :email, :nationality,
-    #).permit(
-    #    :id,
-    #    :first_name,
-    #    :last_name,
-    #    :dependent_user_id,
-    #    personal_detail:[
-    #        :photo,:dob,:gender,:nationality,:address,:state,
-    #        :city,:pincode,:country,:mobile_number,:gender,:date_of_birth,
-    #        :photo_path,:user_id,:photo_original_url,:photo_medium_url,:photo_thumb_url,
-    #        :photo_small_url,:updated_at,user:[]
-    #    ],
-    #    non_indian_specific_detail:[
-    #        :passport_number,
-    #        :passport_city_of_issue,
-    #        :passport_country_of_issue,
-    #        :passport_date_of_issue,
-    #        :passport_valid_till,
-    #        :user_id,:updated_at,:id
-    #    ],
-    #)
-
   end
 
 end

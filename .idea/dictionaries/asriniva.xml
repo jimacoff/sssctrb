@@ -2,6 +2,7 @@
   <dictionary name="asriniva">
     <words>
       <w>afterrender</w>
+      <w>beforerender</w>
       <w>datecolumn</w>
       <w>datefield</w>
       <w>pincode</w>

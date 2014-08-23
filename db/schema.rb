@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726084724) do
+ActiveRecord::Schema.define(version: 20140730195827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,16 @@ ActiveRecord::Schema.define(version: 20140726084724) do
     t.datetime "updated_at"
   end
 
-  create_table "non_indian_specific_details", force: true do |t|
+  create_table "nri_details", force: true do |t|
+    t.string   "verification_id_number"
+    t.date     "date_of_entry_into_india"
+    t.integer  "user_id"
+    t.integer  "verification_id_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "passport_details", force: true do |t|
     t.string   "passport_number"
     t.string   "passport_city_of_issue"
     t.string   "passport_country_of_issue"
@@ -63,6 +72,14 @@ ActiveRecord::Schema.define(version: 20140726084724) do
     t.datetime "updated_at"
   end
 
+  create_table "user_groups", force: true do |t|
+    t.string   "group_name"
+    t.text     "group_description"
+    t.integer  "role_id",           default: 2, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -81,15 +98,30 @@ ActiveRecord::Schema.define(version: 20140726084724) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "nationality"
-    t.integer  "role_id"
+    t.integer  "dependent_user_id",      default: 0
+    t.integer  "user_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "dependent_user_id",      default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "verification_id_details", force: true do |t|
+    t.string   "verification_id_number"
+    t.integer  "user_id"
+    t.integer  "verification_id_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "verification_id_types", force: true do |t|
+    t.string   "verification_id_type_name"
+    t.string   "verification_id_type_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "visa_details", force: true do |t|
     t.string   "visa_number"

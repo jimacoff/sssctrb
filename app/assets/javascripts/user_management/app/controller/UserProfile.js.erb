@@ -1,83 +1,67 @@
 <%url_helper = ::Rails.application.routes.url_helpers%>
 
 Ext.define('UserManagement.controller.UserProfile', {
-  extend: 'Ext.app.Controller',
-  user_details_paths:null,
-  config_variables:null,
-  views: [
-      'UserManagement.view.userProfile.ProfileCompletenessChart',
-      'UserManagement.view.userProfile.DetailsPanel',
-      'UserManagement.view.users.UserPersonalDetails',
-      'UserManagement.view.users.UserPersonalDetailsFieldSet'
-  ],
+      extend: 'Ext.app.Controller',
+      user_details_paths:null,
+      config_variables:null,
+      views: [
+          'UserManagement.view.userProfile.ProfileCompletenessChart',
+          'UserManagement.view.userProfile.DetailsPanel',
+          'UserManagement.view.users.UserPersonalDetails',
+          'UserManagement.view.users.UserPersonalDetailsFieldSet'
+      ],
 
-  models:[
-    'UserManagement.model.UserProfile.ProfileCompletenessChartModel',
-    'UserManagement.model.UserProfile.UserProfileDetails',
-    'UserManagement.model.UserProfile.User',
-    'UserManagement.model.UserProfile.NonIndianSpecificDetails',
-  ],
-  stores:[
-    'UserManagement.store.UserProfile.ProfileCompletenessChartStore',
-    'UserManagement.store.UserProfile.UsersStore'
-  ],
+      models:[
+        'UserManagement.model.UserProfile.ProfileCompletenessChartModel',
+        'UserManagement.model.UserProfile.UserProfileDetails',
+        'UserManagement.model.UserProfile.User',
+        'UserManagement.model.UserProfile.IndianUser',
+        'UserManagement.model.UserProfile.NonIndianSpecificDetails',
+        'UserManagement.model.UserProfile.VerificationIdDetails',
+        'UserManagement.model.UserProfile.NRIUser',
+        'UserManagement.model.UserProfile.NRIDetails',
+        'UserManagement.model.UserProfile.OverseasUser',
+        'UserManagement.model.UserProfile.PassportDetails'
+      ],
+      stores:[
+        'UserManagement.store.UserProfile.ProfileCompletenessChartStore',
+        'UserManagement.store.UserProfile.UsersStore',
+        'UserManagement.store.UserProfile.IndianUsersStore',
+        'UserManagement.store.UserProfile.NRIUsersStore',
+        'UserManagement.store.UserProfile.OverseasUsersStore'
+      ],
 
-  refs: [
-      {
-        ref: 'profileCompletenessChart',
-        selector: 'profileCompletenessChart'
-      },
-      {
-          ref: 'userPersonalDetails',
-          selector: 'userPersonalDetails'
-      },
-      {
-          ref: 'detailsPanel',
-          selector: 'detailsPanel'
-      }
-//      {
-//          ref: 'signUpForm',
-//          selector: 'signUpForm'
-//      },
-//      {
-//          ref: 'allUsers',
-//          selector: 'allUsers'
-//      }
-  ],
-
-  init: function() {
-//    this.control({
-      this.listen({
-          controller:{
+      refs: [
+          {
+            ref: 'profileCompletenessChart',
+            selector: 'profileCompletenessChart'
           },
-          component:{
-              'profileCompletenessChart':{
-                  profileChartDoubleClick:this.onProfileChartDoubleClick,
-                  render:this.loadSpecificChartData,
-              },
-              'detailsPanel button[itemId="saveDetailsButtonItemId"]':{
-                  click:this.save_user_specific_details
-              },
-              'configure_paths':this.configure_paths
+          {
+              ref: 'userPersonalDetails',
+              selector: 'userPersonalDetails'
+          },
+          {
+              ref: 'detailsPanel',
+              selector: 'detailsPanel'
           }
-      });
-//      'sample':{
-//        render:this.renderSampleForm
-//      },
-//      'addEditUserForm button[itemId="form_submit"]': {
-//        click: this.saveUser,
-//      },
-//      'allUsers': {
-//          afterrender: this.getAllUsers
-//      },
-//      'signUpForm':{
-////          afterrender: this.
-//      },
-//      'signUpForm button[itemId="form_submit"]': {
-//          click: this.saveUser,
-//      },
-//    });
-  },
+      ],
+
+      init: function() {
+          this.listen({
+              controller:{
+              },
+              component:{
+                  'profileCompletenessChart':{
+                      profileChartDoubleClick:this.onProfileChartDoubleClick,
+                      render:this.loadSpecificChartData,
+                  },
+                  'detailsPanel button[itemId="saveDetailsButtonItemId"]':{
+                      click:this.save_user_specific_details
+                  },
+                  'configure_paths':this.configure_paths
+              }
+          });
+    },
     configure_paths_and_variables:function(user_details_paths_params,config_variables){
 
 //      this.user_details_paths = user_details_paths_params;
@@ -91,14 +75,15 @@ Ext.define('UserManagement.controller.UserProfile', {
         var replacedString = urlString.replace('{user_id}',user_id);
         return replacedString;
     },
-    getLeadUser:function(){
-        var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+    getLeadUser:function(user_details_store){
+//        var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
         leadUser = user_details_store.findRecord('dependent_user_id',0);
         return leadUser;
     },
-  getUserDetails:function(callbackFunction){
+  getUserDetails:function(user_details_store,callbackFunction){
       // Get the complete User Details
-      var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
+      if(!user_details_store)
+        var user_details_store = this.getUserManagementStoreUserProfileUsersStoreStore();
 
       var url_path = "<%=CGI.unescape url_helper.get_user_details_path('{user_id}')%>";
 

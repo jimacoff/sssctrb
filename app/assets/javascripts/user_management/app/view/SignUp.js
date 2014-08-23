@@ -44,14 +44,21 @@ Ext.define('UserManagement.view.SignUp',{
             {
                 xtype:'combo',
                 fieldLabel: 'Nationality',
+                itemId:'nationality',
                 flex:1,
-                store:nationalityStore,
-                name: 'user[nationality]',
-                displayField:'value',
+//                store:nationalityStore,
+                store:'UserGroups',
+                name: 'user[user_group_id]',
+                displayField:'group_name',
                 valueField:'id',
-                value:1,
                 query:'local',
-                msgTarget:'side'
+                msgTarget:'side',
+                listeners:{
+                    afterrender:function(thisCombo,eOpts){
+                        alert(thisCombo.getStore().getCount());
+                        thisCombo.select(thisCombo.getStore().getAt(0));
+                    }
+                }
             },
             {
                 xtype:'container',

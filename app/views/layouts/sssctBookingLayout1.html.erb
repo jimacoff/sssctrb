@@ -6,14 +6,11 @@
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag 'application' %>
 
-  <script>
-//      $.ajaxSetup({
-//          headers: {
-//              'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-//          }
-//      });
+  <script type="text/javascript">
+      function location_link(location){
+          window.location.href = location;
+      }
   </script>
-
 
   <style>
     .delete_cls{

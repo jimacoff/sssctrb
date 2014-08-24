@@ -6,14 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var nationalityStore = Ext.create('Ext.data.Store', {
-    fields:['id','value'],
-    data : [
-        {id: 1,    value: 'Indian'},
-        {id: 2,    value: 'Overseas'},
-    ]
-});
-
 Ext.define('UserManagement.view.SignUp',{
     extend:'Ext.form.Panel',
     alias : 'widget.signUpForm',
@@ -46,7 +38,6 @@ Ext.define('UserManagement.view.SignUp',{
                 fieldLabel: 'Nationality',
                 itemId:'nationality',
                 flex:1,
-//                store:nationalityStore,
                 store:'UserGroups',
                 name: 'user[user_group_id]',
                 displayField:'group_name',
@@ -55,7 +46,6 @@ Ext.define('UserManagement.view.SignUp',{
                 msgTarget:'side',
                 listeners:{
                     afterrender:function(thisCombo,eOpts){
-                        alert(thisCombo.getStore().getCount());
                         thisCombo.select(thisCombo.getStore().getAt(0));
                     }
                 }

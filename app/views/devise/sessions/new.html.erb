@@ -127,8 +127,15 @@
                             xtype: 'box',
                             autoEl: {
                                 tag: 'a',
-                                href: '<%=new_user_registration_path%>',
+                                href: '#',
                                 html: 'Sign Up'
+                            },
+                            listeners:{
+                                render: function(e) {
+                                    e.getEl().on('click', function() {
+                                        window.location.href = '<%=new_user_registration_path%>';
+                                    },e);
+                                }
                             }
                         },
                         {
@@ -136,8 +143,15 @@
                             margin:"0 0 0 10",
                             autoEl: {
                                 tag: 'a',
-                                href: '<%=new_user_password_path%>',
+                                href: '#',
                                 html: 'Forgot Password'
+                            },
+                            listeners:{
+                                render: function(e) {
+                                    e.getEl().on('click', function() {
+                                        window.location.href = '<%=new_user_password_path%>';
+                                    },e);
+                                }
                             }
                         }
                     ]

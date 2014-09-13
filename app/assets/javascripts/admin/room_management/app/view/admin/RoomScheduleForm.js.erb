@@ -1,0 +1,76 @@
+Ext.define('AdminRoomManagement.view.admin.RoomScheduleForm',{
+    extend:'Ext.form.Panel',
+    alias:'widget.roomScheduleForm',
+//    layout:'fit',
+    margin:'20',
+    initComponent:function(){
+        var me = this;
+        me.defaults={
+            padding:'10 10 0 10',
+            size:50
+        };
+
+        me.items=[
+            {
+                xtype:'combo',
+                fieldLabel:'Room Type',
+                store:'AdminRoomManagement.store.RoomTypes',
+                displayField:'name',
+                name:'room_type_id',
+                valueField:'id',
+            },
+            {
+                xtype:'datefield',
+                minValue:new Date(),
+                fieldLabel:'From',
+                format:'M d, Y',
+                name:'from_date',
+            },
+            {
+                xtype:'datefield',
+                minValue:new Date(),
+                fieldLabel:'To',
+                format:'M d, Y',
+                name:'to_date',
+            },
+            {
+                xtype:'textfield',
+                fieldLabel:'Number of Rooms Available',
+                name:'number_of_rooms_available',
+            },
+            {
+                xtype:'textarea',
+                fieldLabel:'Room Schedule Description',
+                name:'schedule_desc',
+                cols:200,
+                rows:5
+            }
+        ];
+
+        me.dockedItems=[
+            {
+                xtype:'toolbar',
+                dock:'bottom',
+                items:[
+                    {
+                        xtype:'button',
+                        text:'Save Schedule',
+                        itemId:'save',
+                        tooltip:'Save Schedule'
+
+                    },
+                    {
+                        xtype:'button',
+                        text:'Cancel',
+                        itemId:'cancel',
+                        tooltip:'Cancel'
+                    },
+                ]
+            }
+        ];
+
+        me.callParent(arguments);
+    }
+
+
+})

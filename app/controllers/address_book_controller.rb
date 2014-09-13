@@ -53,8 +53,6 @@ class AddressBookController < ApplicationController
 
         end
 
-        puts user_to_be_saved.inspect
-
         user_to_be_saved.update(
             {
                 :dependent_user_id => current_user.id,

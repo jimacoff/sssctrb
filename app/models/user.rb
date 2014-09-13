@@ -95,6 +95,7 @@ class User < ActiveRecord::Base
     user_type
   end
 
+
   def self.users_and_types
     all.map{|x|
       if(!x.user_type.nil? and x.dependent_user_id == 0)

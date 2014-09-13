@@ -1,0 +1,18 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('AdminRoomManagement.model.RoomType',{
+    extend:'Ext.data.Model',
+    fields:[
+        {name:'id',type:'int'},
+        {name:'name',type:'string'},
+        {name:'description',type:'string'}
+    ],
+    proxy: {
+        type: 'ajax',
+        url:'<%=CGI.unescape url_helper.admin_room_type_index_path%>',
+        reader: {
+            type: 'json',
+            root:'all_room_types'
+        }
+    }
+})

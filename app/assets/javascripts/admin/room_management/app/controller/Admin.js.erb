@@ -1,0 +1,118 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('AdminRoomManagement.controller.Admin',{
+    extend:'Ext.app.Controller',
+    views:[
+        'AdminRoomManagement.view.Viewport',
+        'AdminRoomManagement.view.admin.RoomManagement',
+        'AdminRoomManagement.view.admin.AdminConfigLeftPanel',
+        'AdminRoomManagement.view.admin.AdminConfigRightPanel',
+        'AdminRoomManagement.view.admin.RoomTypePanel',
+        'AdminRoomManagement.view.admin.RoomSchedulePanel',
+        'AdminRoomManagement.view.admin.RoomScheduleForm'
+    ],
+    models:[
+        'AdminRoomManagement.model.RoomType',
+        'AdminRoomManagement.model.RoomSchedule'
+    ],
+    stores:[
+        'AdminRoomManagement.store.RoomTypes'
+    ],
+    refs:[
+        {
+            ref:'roomSchedulePanel',
+            selector:'roomSchedulePanel'
+        },
+        {
+            ref:'roomScheduleForm',
+            selector:'roomScheduleForm'
+        }
+    ],
+    init:function(){
+        this.listen({
+            controller:{},
+            component:{
+                'roomSchedulePanel':{
+                    render:this.loadNewSchedule
+                },
+                'roomScheduleForm button[itemId="save"]':{
+                    click:this.saveRoomSchedule
+                }
+            }
+        })
+    },
+    saveRoomSchedule:function(button){
+        var newRoomScheduleForm = this.getRoomScheduleForm().getForm();
+        newRoomScheduleForm.updateRecord();
+
+        var newScheduleRecord = newRoomScheduleForm.getRecord().getData();
+        var newScheduleRecordJson = Ext.encode(newScheduleRecord);
+
+        var authencityTokenParam = $('meta[name="csrf-token"]').attr('content');
+
+        var requestParams = {
+            authenticity_token:authencityTokenParam,
+            newScheduleRecord:newScheduleRecordJson
+        };
+
+        Ext.Ajax.request({
+            url:'<%=url_helper.admin_room_schedule_index_path%>',
+            params:requestParams,
+            method:'POST',
+            scope:this,
+            success:function(response){
+                console.log(response);
+                var result = Ext.decode(response.responseText);
+                var result_message = result.message;
+                Ext.Msg.show({
+                    title:'Alert',
+                    msg:result_message,
+                    buttons:Ext.Msg.OK
+                });
+            },
+            failure:function(form,action){
+                var result_message = action.result.message;
+                Ext.Msg.show({
+                    title:'Alert',
+                    msg:result_message,
+                    buttons:Ext.Msg.OK
+                });
+            }
+        });
+
+    },
+    loadNewSchedule:function(){
+//        alert("Inside the loadNewSchedule");
+
+        var newSchedule = Ext.create('AdminRoomManagement.model.RoomSchedule',{
+            room_type_id:1,
+            from_date:new Date(),
+            to_date:new Date()
+        });
+
+        console.log(newSchedule);
+
+        this.getRoomScheduleForm().getForm().loadRecord(newSchedule);
+    }
+
+    // Admin Functions
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

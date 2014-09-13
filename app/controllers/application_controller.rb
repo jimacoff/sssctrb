@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
       "sssctBookingLayout1"
     elsif is_a?(AddressBookController)
       "sssctBookingLayout1"
+    elsif is_a?(AddressBookController)
+      "sssctBookingLayout1"
     else
     "application"
     end

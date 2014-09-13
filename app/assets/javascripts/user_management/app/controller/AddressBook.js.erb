@@ -178,8 +178,6 @@ Ext.define('UserManagement.controller.AddressBook', {
       userData = userRecord.getData(true);
       userRecordData = Ext.encode(userData);
 
-      console.log(userRecordData)
-
       form_submit_path = "<%=CGI.unescape url_helper.save_member_details_path('{user_id}')%>";
       url_path = this.getUrlWithUserId(form_submit_path,user_id)
 

@@ -1,0 +1,58 @@
+Ext.define('AdminRoomManagement.view.admin.RoomSchedulePanel',{
+    extend:'Ext.panel.Panel',
+    alias:'widget.roomSchedulePanel',
+    margin:'10 0 0 20',
+    height:'400',
+    maxWidth:'700',
+//    autoScroll:true,
+//    height:'180',
+//    border:1,
+//    style: {
+////        borderColor: 'black',
+//        borderStyle: 'solid'
+//    },
+    initComponent:function(){
+        var me = this;
+        me.items=[
+            {
+                xtype:'roomScheduleForm',
+                maxWidth:'500',
+                height:'300',
+                autoScroll:true
+//                border:1
+//                style: {
+//            //        borderColor: 'black',
+//                    borderStyle: 'solid'
+//                }
+            }
+        ];
+
+        me.dockedItems = [
+            {
+                xtype:'toolbar',
+                dock:'top',
+                items:[
+//                    '<-',
+                    {
+                        xtype:'button',
+                        text:'+',
+                        itemId:'addRoomSchedule',
+                        iconCls:'add_cls',
+                        tooltip:'Add Schedule'
+                    },
+                    {
+                        xtype:'button',
+                        text:'-',
+                        itemId:'deleteRoomSchedule',
+                        iconCls:'delete_cls',
+                        tooltip:'Delete Schedule'
+                    }
+                ]
+            }
+        ];
+
+        me.callParent(arguments);
+    }
+
+
+})

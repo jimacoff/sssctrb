@@ -38,6 +38,16 @@ SSSCTRoomBooking::Application.routes.draw do
 
   # ==========================================================
 
+  # ================= Admin Routes =================
+  get 'admin_index', to:'admin/admin#index'
+  namespace :admin do
+
+    resources :room_schedule
+    resources :room_type
+    #get 'room_schedule', to:'room_schedule#index'
+  end
+  # ================= Admin Routes =================
+
 
   #namespace :users do
   #  get 'check_for_duplicate_user', to:"registrations"

@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/controllers/address_book_controller.rb" line="12" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/controller/Admin.js.erb" line="92" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" name="Default" comment="" />
     <ignored path="Sample2.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/address_book_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408791567930" ignored="false" />
-    <file path="/routes.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406559164403" ignored="false" />
-    <file path="/index.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406552693494" ignored="false" />
+    <file path="/routes.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410018732761" ignored="false" />
+    <file path="/index.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410029090300" ignored="false" />
     <file path="/AddressBookTreePanel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405852521936" ignored="false" />
     <file path="/AddressBook.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405847201021" ignored="false" />
     <file path="/AddressBookModel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405034330006" ignored="false" />
     <file path="/Gemfile" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405071769111" ignored="false" />
-    <file path="/database.yml" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405068651760" ignored="false" />
+    <file path="/database.yml" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410005902539" ignored="false" />
     <file path="/development.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406357741806" ignored="false" />
     <file path="/MemberDetailsPanel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408779987129" ignored="false" />
     <file path="/UserPersonalDetails.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406031696900" ignored="false" />
     <file path="/UserPersonalDetailsFieldSet.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405309860304" ignored="false" />
-    <file path="/a.dummy" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408887069460" ignored="false" />
+    <file path="/a.dummy" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410605806671" ignored="false" />
     <file path="/UserProfile.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405846750697" ignored="false" />
     <file path="/PassportVisaDetails.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406032310767" ignored="false" />
-    <file path="/sssctBookingLayout1.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406702176157" ignored="false" />
+    <file path="/sssctBookingLayout1.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410011936446" ignored="false" />
     <file path="/AddressBook.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408788446398" ignored="false" />
     <file path="/AddressBookTreePanel.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405859255877" ignored="false" />
     <file path="/User.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406365350331" ignored="false" />
     <file path="/UserProfile.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406553603087" ignored="false" />
     <file path="/_users_landing_page.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1405900818164" ignored="false" />
     <file path="/user_details_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408783497661" ignored="false" />
-    <file path="/user.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408790985471" ignored="false" />
+    <file path="/user.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410011893397" ignored="false" />
     <file path="/dependent_user.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406654949539" ignored="false" />
-    <file path="/20140302071145_devise_create_users.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406467392576" ignored="false" />
-    <file path="/application_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406093263535" ignored="false" />
+    <file path="/20140302071145_devise_create_users.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410011035942" ignored="false" />
+    <file path="/application_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410024156227" ignored="false" />
     <file path="/confirmations_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406358321064" ignored="false" />
     <file path="/new.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408886146337" ignored="false" />
     <file path="/20140726084724_create_visas.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1406364557318" ignored="false" />
@@ -71,7 +71,31 @@
     <file path="/20140627174103_create_passport_details.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408781633528" ignored="false" />
     <file path="/passport_detail.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408783672412" ignored="false" />
     <file path="/OverseasUsersStore.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408784838751" ignored="false" />
-    <file path="/_sssct_roombooking_header.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1408873000354" ignored="false" />
+    <file path="/_sssct_roombooking_header.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410018678376" ignored="false" />
+    <file path="/20140906093146_create_room_types.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1409996413729" ignored="false" />
+    <file path="/20140906093159_create_room_availabilities.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1409996691666" ignored="false" />
+    <file path="/admin_user.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410011551287" ignored="false" />
+    <file path="/room_schedule_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410649483963" ignored="false" />
+    <file path="/admin_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410027748650" ignored="false" />
+    <file path="/Admin.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410608898804" ignored="false" />
+    <file path="/ViewPort.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410020311395" ignored="false" />
+    <file path="/RoomManagement.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410029403047" ignored="false" />
+    <file path="/admin.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410022556911" ignored="false" />
+    <file path="/sssctBookingLayout2.html.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410025787391" ignored="false" />
+    <file path="/Viewport.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410029133838" ignored="false" />
+    <file path="/RoomTypePanel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410596197634" ignored="false" />
+    <file path="/AdminConfigLeftPanel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410591250796" ignored="false" />
+    <file path="/AdminConfigRightPanel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410643192239" ignored="false" />
+    <file path="/RoomType.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410596584647" ignored="false" />
+    <file path="/RoomTypes.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410597283239" ignored="false" />
+    <file path="/RoomType.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410597020782" ignored="false" />
+    <file path="/room_type_controller.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410608652357" ignored="false" />
+    <file path="/RoomSchedulePanel.js" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410605551834" ignored="false" />
+    <file path="/RoomSchedulePanel.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410643155432" ignored="false" />
+    <file path="/RoomScheduleForm.js.erb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410643015619" ignored="false" />
+    <file path="/fragment.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410647458384" ignored="false" />
+    <file path="/room_scheduler_config.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410637000906" ignored="false" />
+    <file path="/room_availability.rb" changelist="d09b5b1c-093f-4d9e-92d7-3abef7ff03d2" time="1410648749724" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,93 +114,42 @@
     <favorites_list name="Sample2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7209302">
+    <splitter split-orientation="horizontal" split-proportion="0.56134725">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.49757674">
+        <splitter split-orientation="vertical" split-proportion="0.11308562">
           <split-first>
             <leaf>
-              <file leaf-file-name="UserProfile.js.erb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/UserProfile.js.erb">
+              <file leaf-file-name="20140906093146_create_room_types.rb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/db/migrate/20140906093146_create_room_types.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="291" column="20" selection-start="10911" selection-end="10911" vertical-scroll-proportion="-3.2083333">
+                    <state line="4" column="21" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="IndianSpecificDetails.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/users/IndianSpecificDetails.js">
+              <file leaf-file-name="20140906093159_create_room_availabilities.rb" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/db/migrate/20140906093159_create_room_availabilities.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="21" column="12" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
-                      <folding>
-                        <marker date="1406560045080" expanded="true" signature="502:840" placeholder="{&quot;name&quot;: 'verification_id_type_id'...}" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="NRIDetails.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/users/NRIDetails.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="30" column="21" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
+                    <state line="5" column="30" selection-start="169" selection-end="169" vertical-scroll-proportion="3.409091">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="VerificationIdType.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/VerificationIdType.js">
+              <file leaf-file-name="room_scheduler_config.rb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/config/initializers/room_scheduler_config.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="13" column="25" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0">
+                    <state line="4" column="29" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="AddressBookTreePanel.js.erb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/addressBook/AddressBookTreePanel.js.erb">
+              <file leaf-file-name="dependencies.rb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-4.0.3/lib/active_support/dependencies.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="15" column="31" selection-start="409" selection-end="409" vertical-scroll-proportion="-7.5">
-                      <folding>
-                        <marker date="1405859291136" expanded="true" signature="0:160" placeholder="/** Created with JetBrains RubyMine. ...*/" />
-                        <marker date="1405859291136" expanded="true" signature="228:1559" placeholder="{&quot;extend&quot;: 'Ext.panel.Panel'...}" />
-                        <marker date="1405859291136" expanded="true" signature="345:378" placeholder="{&quot;margin&quot;: '0 10 10 0'...}" />
-                        <marker date="1405859291136" expanded="true" signature="408:1555" placeholder="{...}" />
-                        <marker date="1405859291136" expanded="true" signature="452:825" placeholder="[...]" />
-                        <marker date="1405859291136" expanded="true" signature="466:814" placeholder="{&quot;xtype&quot;: 'treepanel'...}" />
-                        <marker date="1405859291136" expanded="true" signature="732:800" placeholder="//..." />
-                        <marker date="1405859291136" expanded="true" signature="853:1523" placeholder="[...]" />
-                        <marker date="1405859291136" expanded="true" signature="867:1513" placeholder="{&quot;xtype&quot;: 'toolbar'...}" />
-                        <marker date="1405859291136" expanded="true" signature="952:1499" placeholder="[...]" />
-                        <marker date="1405859291136" expanded="true" signature="999:1224" placeholder="{&quot;xtype&quot;: 'button'...}" />
-                        <marker date="1405859291136" expanded="true" signature="1246:1480" placeholder="{&quot;xtype&quot;: 'button'...}" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="MemberDetailsPanel.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/addressBook/MemberDetailsPanel.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="13" column="8" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="Users.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/Users.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="135" column="24" selection-start="3909" selection-end="3909" vertical-scroll-proportion="0.0">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="SignUp.js" pinned="false" current="true" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/SignUp.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="12" column="24" selection-start="291" selection-end="291" vertical-scroll-proportion="0.48582995">
+                    <state line="216" column="0" selection-start="8063" selection-end="8063" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
@@ -186,73 +159,91 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="passport_detail.rb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/models/passport_detail.rb">
+              <file leaf-file-name="RoomManagement.js" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomManagement.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+                    <state line="3" column="30" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
+              <file leaf-file-name="AdminConfigRightPanel.js" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/AdminConfigRightPanel.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="148" column="38" selection-start="5460" selection-end="5460" vertical-scroll-proportion="0.51123595">
+                    <state line="18" column="33" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="overseas_user.rb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/models/overseas_user.rb">
+              <file leaf-file-name="RoomSchedulePanel.js.erb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomSchedulePanel.js.erb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+                    <state line="2" column="28" selection-start="122" selection-end="122" vertical-scroll-proportion="-1.25">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+              <file leaf-file-name="RoomSchedule.js.erb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model/RoomSchedule.js.erb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="99" column="51" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.0">
+                    <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_sssct_roombooking_header.html.erb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/layouts/_sssct_roombooking_header.html.erb">
+              <file leaf-file-name="RoomTypePanel.js" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomTypePanel.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="5" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="-3.125">
+                    <state line="47" column="25" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="sssctBookingLayout1.html.erb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/layouts/sssctBookingLayout1.html.erb">
+              <file leaf-file-name="RoomType.js.erb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model/RoomType.js.erb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="9" column="26" selection-start="237" selection-end="237" vertical-scroll-proportion="-5.625">
+                    <state line="16" column="29" selection-start="467" selection-end="467" vertical-scroll-proportion="-10.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="loginLayout.html.erb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/layouts/loginLayout.html.erb">
+              <file leaf-file-name="RoomTypes.js" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/store/RoomTypes.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="36" column="22" selection-start="818" selection-end="818" vertical-scroll-proportion="-11.833333">
+                    <state line="3" column="17" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="nri_user.rb" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/models/nri_user.rb">
+              <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="6" column="38" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+                    <state line="14" column="38" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="RoomScheduleForm.js.erb" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomScheduleForm.js.erb">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="14" column="38" selection-start="370" selection-end="370" vertical-scroll-proportion="-1.7083334">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Admin.js.erb" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/controller/Admin.js.erb">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="70" column="30" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.4988345">
                       <folding />
                     </state>
                   </provider>
@@ -264,82 +255,73 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="PassportDetails.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/UserProfile/PassportDetails.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="7" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="AddressBook.js.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/AddressBook.js.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="131" column="0" selection-start="4240" selection-end="4240" vertical-scroll-proportion="-6.625">
+                <state line="181" column="25" selection-start="6049" selection-end="6049" vertical-scroll-proportion="-6.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="OverseasUsersStore.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/store/UserProfile/OverseasUsersStore.js">
+          <file leaf-file-name="room_schedule_controller.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="11" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
+                <state line="77" column="12" selection-start="2316" selection-end="2316" vertical-scroll-proportion="0.60966545">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="address_book_controller.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="address_book_controller.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/address_book_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="260" column="18" selection-start="7893" selection-end="7893" vertical-scroll-proportion="0.79611653">
+                <state line="17" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NRIUser.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/UserProfile/NRIUser.js">
+          <file leaf-file-name="room_availability.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/models/room_availability.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="11" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="indian_user.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/dependent_users/indian_user.rb">
+          <file leaf-file-name="implicit_render.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-4.0.3/lib/action_controller/metal/implicit_render.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="14" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+                <state line="4" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/dependent_users/user.rb">
+          <file leaf-file-name="rescue.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-4.0.3/lib/action_controller/metal/rescue.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="9" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0">
+                <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="overseas_user.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/dependent_users/overseas_user.rb">
+          <file leaf-file-name="dynamic_matchers.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+                <state line="15" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nri_user.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/dependent_users/nri_user.rb">
+          <file leaf-file-name="basic_object.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/basic_object.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="4" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
+                <state line="276" column="8" selection-start="10189" selection-end="10189" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -354,25 +336,29 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="GeneratorOptions">
+    <option name="VCS_SHOW_CONFIRMATION" value="true" />
+    <option name="ENVIRONMENT" value="development" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/user_details_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/passport_detail.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/UserProfile/PassportDetails.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/UserProfile/OverseasUser.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/store/UserProfile/OverseasUsersStore.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/UserProfile.js.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/AddressBook.js.erb" />
-        <option value="$PROJECT_DIR$/app/models/dependent_users/user.rb" />
-        <option value="$PROJECT_DIR$/app/models/dependent_users/overseas_user.rb" />
-        <option value="$PROJECT_DIR$/app/models/dependent_users/nri_user.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model/RoomType.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/store/RoomTypes.js" />
         <option value="$PROJECT_DIR$/app/controllers/address_book_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_sssct_roombooking_header.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/sssctBookingLayout1.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/SignUp.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomTypePanel.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomSchedulePanel.js" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/room_type_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/AddressBook.js.erb" />
+        <option value="$PROJECT_DIR$/config/initializers/RoomSchedulerConfig/room_scheduler_config.rb" />
+        <option value="$PROJECT_DIR$/config/initializers/room_scheduler_config.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomSchedulePanel.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/AdminConfigRightPanel.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomScheduleForm.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model/RoomSchedule.js.erb" />
+        <option value="$PROJECT_DIR$/app/models/room_availability.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/controller/Admin.js.erb" />
       </list>
     </option>
   </component>
@@ -648,6 +634,302 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="devise (v3.2.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise (v3.2.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise (v3.2.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise (v3.2.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activesupport (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activesupport (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activesupport (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notifications" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activerecord (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activerecord (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_record" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actionpack (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actionpack (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action_view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actionpack (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action_controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actionpack (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action_controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actionpack (v4.0.3, RVM: ruby-1.9.3-p545) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstract_controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="&lt; RVM: ruby-1.9.3-p545 &gt;" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
@@ -744,15 +1026,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_mailer" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -766,125 +1040,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_details" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sessions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="address_book" />
+              <option name="myItemId" value="initializers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -917,6 +1077,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1092,7 +1274,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="userProfile" />
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NonIndianSpecificDetails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1198,83 +1384,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserProfile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSSCT_RoomBooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserProfile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1330,7 +1440,235 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SSSCT_RoomBooking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1345,25 +1683,26 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="ruby.project.structure" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/javascripts/user_management" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/models/dependent_users" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/store/UserProfile" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/UserProfile" />
-      <recent name="$PROJECT_DIR$/app/models" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/users" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin" />
+      <recent name="$PROJECT_DIR$/app/views/admin/admin" />
+      <recent name="$PROJECT_DIR$/app/views/layouts" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/admin/room_management" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/initializers" />
+      <recent name="$PROJECT_DIR$/config/initializers/RoomSchedulerConfig" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/admin/room_management" />
       <recent name="$PROJECT_DIR$/app/models/dependent_users" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/model" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/store" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/users" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/users/IndianUsers" />
     </key>
   </component>
   <component name="RunManager" selected="Rails.SSSCT-Room Booking">
@@ -1554,8 +1893,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25581396" sideWeight="0.6704362" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2197092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25581396" sideWeight="0.6930533" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3069467" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329591" sideWeight="0.726979" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31663975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1633,119 +1972,144 @@
           <line>4</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb</url>
+          <line>17</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb</url>
+          <line>52</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb</url>
+          <line>31</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb</url>
+          <line>71</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/views/layouts/_sssct_roombooking_header.html.erb</url>
+          <line>2</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/nri_user.rb">
+    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/time.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="38" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+        <state line="59" column="15" selection-start="1647" selection-end="1647" vertical-scroll-proportion="-4.9512196">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-4.0.3/lib/active_support/notifications/fanout.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.33231708">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/basic_object.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="276" column="8" selection-start="10189" selection-end="10189" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-4.0.3/lib/action_controller/metal/implicit_render.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-4.0.3/lib/action_controller/metal/rescue.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/room_availability.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/address_book_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="18" selection-start="7893" selection-end="7893" vertical-scroll-proportion="0.79611653">
+        <state line="17" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomScheduleForm.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="51" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.0">
+        <state line="14" column="38" selection-start="370" selection-end="370" vertical-scroll-proportion="-1.7083334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/nepal_bhutan_user.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model/RoomType.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
+        <state line="16" column="29" selection-start="467" selection-end="467" vertical-scroll-proportion="-10.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140202061145_create_user_groups.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/model/RoomSchedule.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140617094044_create_indian_specific_details.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/view/admin/RoomManagement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="19" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+        <state line="3" column="30" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140627174103_create_passport_details.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/users/NonIndianSpecificDetails/VisaDetailsGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+        <state line="110" column="0" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/nri_detail.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140906093159_create_room_availabilities.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="5" column="30" selection-start="169" selection-end="169" vertical-scroll-proportion="3.409091">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/model/UserProfile/OverseasUser.js">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/room_management/app/controller/Admin.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
+        <state line="70" column="30" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.4988345">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_sssct_roombooking_header.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/room_schedule_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/loginLayout.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="22" selection-start="818" selection-end="818" vertical-scroll-proportion="-11.833333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/sssctBookingLayout1.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="237" selection-end="237" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/UserProfile.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="20" selection-start="10911" selection-end="10911" vertical-scroll-proportion="-3.2083333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/controller/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="24" selection-start="3909" selection-end="3909" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="38" selection-start="5460" selection-end="5460" vertical-scroll-proportion="0.51123595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user_management/app/view/SignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="291" selection-end="291" vertical-scroll-proportion="0.48582995">
+        <state line="77" column="12" selection-start="2316" selection-end="2316" vertical-scroll-proportion="0.60966545">
           <folding />
         </state>
       </provider>

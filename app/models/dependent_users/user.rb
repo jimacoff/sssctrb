@@ -15,4 +15,8 @@ class DependentUsers::User < ActiveRecord::Base
     first_name + last_name
   end
 
+  def create
+
+  end
+
 end

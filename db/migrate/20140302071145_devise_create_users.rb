@@ -48,13 +48,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :confirmation_token,    :unique => true
     # add_index :users, :unlock_token,         :unique => true
 
-    User.create(
-        email:"mail2sanand.misc@gmail.com",
+    AdminUser.create_admin(
+        email:"admin",
         first_name:"Anand",
         last_name:"Srinivasan",
         nationality:1,
-        password:"Sairam9999",
-        user_group_id:1
+        encrypted_password:"Sairam9999",
+        user_group_id:1,
+        confirmed_at:Date.today
     )
 
   end

@@ -28,15 +28,7 @@
 
 <div class="main_div">
   <div>
-    <img src="<%= asset_path 'banner-2.jpg' %>" style="border: 0;padding: 0px;margin: 0px" border="0"/>
-
     <div class="div_1">
-      <div style="float: right;padding-right: 10px;"><% if user_signed_in? %>
-          <%=render "layouts/sssct_roombooking_header", :user_group_id => current_user.user_group_id%>
-          Welcome <%= current_user.email %>
-          <%= link_to 'logout?', destroy_user_session_path, :method => 'delete' %>
-      <% end %></div>
-
       <div id="content_div" style="margin: 0;padding-top: 30px;">
         <%= yield %>
       </div>

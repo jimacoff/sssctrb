@@ -1,4 +1,4 @@
-class Users::ConfirmationsController < Devise::ConfirmationsController
+class DeviseUsers::ConfirmationsController < Devise::ConfirmationsController
 
   # POST /resource/confirmation
   def create

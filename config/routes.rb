@@ -8,9 +8,9 @@ SSSCTRoomBooking::Application.routes.draw do
 
   devise_for  :users  ,
               :controllers => {
-                  :sessions  => "users/sessions",
-                  :registrations => "users/registrations",
-                  :confirmations => 'users/confirmations'
+                  :sessions  => "devise_users/sessions",
+                  :registrations => "devise_users/registrations",
+                  :confirmations => 'devise_users/confirmations'
               }             #path_names: {sign_in: "login", sign_out: "logout"}
 
   #post "user_details#save_personal_details"
@@ -24,29 +24,36 @@ SSSCTRoomBooking::Application.routes.draw do
   post 'user_non_indian_specific_details/:id', to:'user_details#save_non_indian_specific_details', as:'save_non_indian_specific_details'
 
   devise_scope :user do
-    namespace :users do
+    namespace :devise_users do
       get 'check_for_duplicate_user', to:"registrations"
     end
   end
 
   # ================  Address Book Routes   ==================
-
   get 'address_book', to:'address_book#index', as: 'address_book'
   get 'get_users_for_address_book', to:'address_book#get_users_for_address_book'
 
   post 'save_member_details/:id', to:'address_book#save_member_details', as:'save_member_details'
-
   # ==========================================================
 
   # ================= Admin Routes =================
   get 'admin_index', to:'admin/admin#index'
   namespace :admin do
-
     resources :room_schedule
     resources :room_type
     #get 'room_schedule', to:'room_schedule#index'
   end
-  # ================= Admin Routes =================
+  # ================= End of Admin Routes =================
+
+  # ================= User Registration/Enquiry ===============
+  get 'enquiry_index',to:'users/enquiry#index'
+  namespace :users do
+    get 'calendar_schedule',to:'enquiry#calendar_schedule'
+    get 'enquiry/:date',to:'enquiry#enquire',as:'enquiry'
+    #resources :booking
+  end
+
+  # ================= End of User Registration/Enquiry ===============
 
 
   #namespace :users do

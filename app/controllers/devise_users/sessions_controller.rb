@@ -1,4 +1,4 @@
-class Users::SessionsController < Devise::SessionsController
+class DeviseUsers::SessionsController < Devise::SessionsController
   layout 'sssctBookingLayout1',:except => []
 
   respond_to :json

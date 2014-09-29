@@ -1,4 +1,4 @@
-Ext.define('AdminRoomManagement.view.admin.RoomTypePanel',{
+Ext.define('RoomManagement.view.admin.RoomTypePanel',{
     extend:'Ext.panel.Panel',
     alias:'widget.roomTypePanel',
     title:'Configurations',
@@ -19,7 +19,7 @@ Ext.define('AdminRoomManagement.view.admin.RoomTypePanel',{
             {
                 xtype:'grid',
                 border:1,
-                store:'AdminRoomManagement.store.RoomTypes',
+                store:'RoomManagement.store.RoomTypes',
                 columns:[
                     {xtype: 'rownumberer'},
                     {header:'Room Type Name',dataIndex:'name',editor:'textfield',flex:1},

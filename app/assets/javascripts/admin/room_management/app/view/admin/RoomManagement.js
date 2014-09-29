@@ -1,4 +1,4 @@
-Ext.define('AdminRoomManagement.view.admin.RoomManagement',{
+Ext.define('RoomManagement.view.admin.RoomManagement',{
     extend:'Ext.panel.Panel',
     title:'Room Schedule Configuration',
     alias:'widget.room_management_panel',

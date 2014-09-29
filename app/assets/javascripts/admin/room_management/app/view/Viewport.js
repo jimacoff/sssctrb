@@ -1,4 +1,4 @@
-Ext.define('AdminRoomManagement.view.Viewport',{
+Ext.define('RoomManagement.view.Viewport',{
     extend:'Ext.panel.Panel',
     layout: 'fit',
     margin:'10 0 0 0',

@@ -1,0 +1,21 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('RoomManagement.model.CalendarScheduleModel',{
+    extend:'Ext.data.Model',
+    fields:[
+        {name:'id',type:'int'},
+        {name:'date',type:'string'},
+        {name:'room_type_id',type:'string'},
+        {name:'room_type',type:'string'},
+        {name:'availability',type:'string'},
+        {name:'description',type:'string'}
+    ],
+    proxy: {
+        type: 'ajax',
+        url:'<%=CGI.unescape url_helper.admin_room_schedule_index_path%>',
+        reader: {
+            type: 'json',
+            root:'all_room_schedules'
+        }
+    }
+})

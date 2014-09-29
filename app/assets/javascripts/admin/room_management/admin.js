@@ -6,7 +6,7 @@ Ext.Loader.setConfig({enabled: true});
 
 Ext.application({
     // the global namespace
-    name: 'AdminRoomManagement',
+    name: 'RoomManagement',
     appFolder: '/assets/admin/room_management/app',
     controllers: [
         'Admin'  //,'RoomSchedule','RoomTypeConfig'

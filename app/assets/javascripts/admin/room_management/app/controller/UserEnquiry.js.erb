@@ -1,0 +1,186 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('RoomManagement.controller.UserEnquiry',{
+    extend:'Ext.app.Controller',
+    views:[
+//        'RoomManagement.view.admin.RoomManagement',
+//        'RoomManagement.view.admin.AdminConfigLeftPanel',
+//        'RoomManagement.view.admin.AdminConfigRightPanel',
+//        'RoomManagement.view.admin.RoomTypePanel',
+        'RoomManagement.view.admin.RoomSchedulePanel',
+        'RoomManagement.view.admin.RoomScheduleForm',
+
+        'RoomManagement.view.userenquiry.UserEnquiryPanel',
+        'RoomManagement.view.userenquiry.EnquiryContents',
+        'RoomManagement.view.userenquiry.EnquiryScheduleForm',
+        'RoomManagement.view.userenquiry.EnquirySchedulePanel'
+    ],
+    models:[
+        'RoomManagement.model.RoomType',
+        'RoomManagement.model.RoomSchedule',
+        'RoomManagement.model.UserCalendarScheduleModel'
+    ],
+    stores:[
+        'RoomManagement.store.RoomTypes',
+        'RoomManagement.store.UserCalendarSchedule'
+    ],
+    refs:[
+        {
+            ref:'roomSchedulePanel',
+            selector:'roomSchedulePanel'
+        },
+        {
+            ref:'enquiryScheduleForm',
+            selector:'enquiryScheduleForm'
+        }
+    ],
+    onLaunch:function(){
+
+    },
+    calendario:null,
+    init:function(){
+        this.listen({
+            controller:{},
+            component:{
+                'enquirySchedulePanel':{
+                    render:this.loadNewSchedule
+                },
+                'enquiryScheduleForm button[itemId="check_availability"]':{
+                    click:this.getAvailability
+                }
+            }
+        })
+    },
+    getAvailability:function(){
+        var enqSchFormView = this.getEnquiryScheduleForm();
+
+        var enquiryParams = {
+            room_type_id: enqSchFormView.down('#room_type_Id').getValue(),
+            from_date: enqSchFormView.down('#from_date_Id').getValue(),
+            to_date: enqSchFormView.down('#to_date_Id').getValue()
+        }
+
+        var me = this;
+        Ext.Ajax.request({
+            url:'<%=url_helper.users_calendar_schedule_path%>',
+            params: enquiryParams,
+            method:'GET',
+            scope:this,
+            success:function(response){
+                var decRes = Ext.decode(response.responseText);
+                console.log(decRes.cal_data);
+
+                me.calendario.setData(decRes.cal_data);
+            }
+        })
+
+    },
+    loadNewSchedule:function(){
+
+        var newSchedule = Ext.create('RoomManagement.model.RoomSchedule',{
+            room_type_id:1,
+            from_date:new Date(),
+            to_date:new Date()
+        });
+
+//        this.getRoomScheduleForm().getForm().loadRecord(newSchedule);
+
+        this.getCalendarData();
+
+    },
+    getCalendarData:function(){
+
+//        console.log(this.getRoomManagementStoreUserCalendarScheduleStore);
+
+        var calScheduleStore = this.getRoomManagementStoreUserCalendarScheduleStore();
+
+        calendarScheduleEvents = {};
+
+        var cal;
+
+        $(function() {
+
+            cal = $( '#calendar' ).calendario( {
+//            var cal = Ext.get('calendar').calendario( {
+//            this.calendario = $( '#calendar' ).calendario( {
+                onDayClick : function( $el, $contentEl, dateProperties ) {
+                    for( var key in dateProperties ) {
+                        console.log( key + ' = ' + dateProperties[ key ] );
+                    }
+                },
+                caldata : calendarScheduleEvents,
+                displayWeekAbbr : true,
+                // choose between values in options.months or options.monthabbrs
+                displayMonthAbbr : true
+            } );
+
+//            var cal = this.calendario,
+            $month = $( '#custom-month' ).html( cal.getMonthName() ),
+            $year = $( '#custom-year' ).html( cal.getYear() );
+
+            $( '#custom-next' ).on( 'click', function() {
+                cal.gotoNextMonth( updateMonthYear );
+            } );
+            $( '#custom-prev' ).on( 'click', function() {
+                cal.gotoPreviousMonth( updateMonthYear );
+            } );
+            $( '#custom-current' ).on( 'click', function() {
+                cal.gotoNow( updateMonthYear );
+            } );
+
+            function updateMonthYear() {
+                $month.html( cal.getMonthName() );
+                $year.html( cal.getYear() );
+            }
+
+            // you can also add more data later on. As an example:
+            /*
+             someElement.on( 'click', function() {
+
+             cal.setData( {
+             '03-01-2013' : '<a href="#">testing</a>',
+             '03-10-2013' : '<a href="#">testing</a>',
+             '03-12-2013' : '<a href="#">testing</a>'
+             } );
+             // goes to a specific month/year
+             cal.goto( 3, 2013, updateMonthYear );
+
+             } );
+             */
+
+        });
+
+        this.calendario = cal;
+
+
+//        calScheduleStore.on('load',function(){
+//            calScheduleStore.each(function(each_cal_sch){
+//                var availability_info = each_cal_sch.get('availability');
+//                calendarScheduleEvents[each_cal_sch.get('date')] = availability_info;
+//            })
+//        });
+
+
+    }
+
+    // Admin Functions
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

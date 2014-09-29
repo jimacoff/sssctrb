@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20140906093159) do
   end
 
   create_table "room_availabilities", force: true do |t|
+    t.string   "year"
     t.string   "month"
     t.json     "schedule"
     t.integer  "room_type_id"
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140906093159) do
 
   create_table "room_types", force: true do |t|
     t.string   "name"
+    t.string   "abbr"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

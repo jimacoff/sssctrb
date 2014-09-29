@@ -1,0 +1,25 @@
+Ext.define('RoomManagement.view.CalendarPanel',{
+    extend:'Ext.panel.Panel',
+    alias:'widget.calendarPanel',
+    initComponent:function(){
+        var me = this;
+        me.items = [
+            {
+                xtype: 'panel',
+                id:"newCalendarId",
+                cls:'fc-calendar-container'
+//                autoEl: {
+//                    tag: 'div',
+//                    id:'newCalendar',
+//                    itemid:'newCalendarItemId'
+//                }
+            }
+//            {
+//                xtype:'container',
+//                id:'newCalendar',
+//                itemid:'newCalendarItemId'
+//            }
+        ];
+        me.callParent(arguments);
+    }
+})

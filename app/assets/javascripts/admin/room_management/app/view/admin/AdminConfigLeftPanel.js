@@ -1,4 +1,4 @@
-Ext.define('AdminRoomManagement.view.admin.AdminConfigLeftPanel',{
+Ext.define('RoomManagement.view.admin.AdminConfigLeftPanel',{
     extend:'Ext.panel.Panel',
     alias:'widget.adminConfigLeftPanel',
     initComponent:function(){

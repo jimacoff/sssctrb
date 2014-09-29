@@ -1,4 +1,4 @@
-Ext.define('AdminRoomManagement.view.admin.AdminConfigRightPanel',{
+Ext.define('RoomManagement.view.admin.AdminConfigRightPanel',{
     extend:'Ext.panel.Panel',
     alias:'widget.adminConfigRightPanel',
     layout:'anchor',
@@ -11,14 +11,14 @@ Ext.define('AdminRoomManagement.view.admin.AdminConfigRightPanel',{
                 xtype:'tabpanel',
                 items:[
                     {
-                        title:'Room Types',
-                        xtype:'roomTypePanel'
-                    },
-                    {
                         title:'Room Schedule',
                         xtype:'roomSchedulePanel',
-                        height:'500',
+                        height:'500'
 //                        autoScroll:true
+                    },
+                    {
+                        title:'Room Types',
+                        xtype:'roomTypePanel'
                     }
                 ]
             }

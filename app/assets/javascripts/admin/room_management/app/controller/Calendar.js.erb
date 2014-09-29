@@ -1,0 +1,126 @@
+<%url_helper = ::Rails.application.routes.url_helpers%>
+
+Ext.define('RoomManagement.controller.Calendar',{
+    extend:'Ext.app.Controller',
+    views:[
+        'RoomManagement.view.CalendarPanel'
+    ],
+    models:[
+        'RoomManagement.model.RoomType',
+        'RoomManagement.model.RoomSchedule',
+        'RoomManagement.model.CalendarScheduleModel'
+    ],
+    stores:[
+        'RoomManagement.store.RoomTypes',
+        'RoomManagement.store.CalendarSchedule'
+    ],
+    refs:[
+        {
+            ref:'calendarPanel',
+            selector:'calendarPanel'
+        },
+//        {
+//            ref:'roomScheduleForm',
+//            selector:'roomScheduleForm'
+//        }
+    ],
+    init:function(){
+        this.listen({
+            controller:{},
+            component:{
+                'calendarPanel':{
+                    render:this.loadCalendarInPanel
+                }
+//                'roomScheduleForm button[itemId="save"]':{
+//                    click:this.saveRoomSchedule
+//                }
+            }
+        })
+    },
+    loadCalendarInPanel:function(thisPanel){
+
+//        thisPanel.down('#yourContainer').add(Ext.create('Ext.Panel', {
+//            html: '<div id="newCalendar"></div>'
+//        }));
+
+
+        $(function() {
+
+            var calendarScheduleEvents = {};
+
+            Ext.get('newCalendarId').removeBodyCls("x.panel");
+
+            console.log($('#calendar'));
+            console.log($('#newCalendarId'));
+
+
+//            var cal = $( '#newCalendar' ).calendario( {
+            var cal = $('#newCalendarId').calendario( {
+                onDayClick : function( $el, $contentEl, dateProperties ) {
+                    for( var key in dateProperties ) {
+                        console.log( key + ' = ' + dateProperties[ key ] );
+                    }
+                },
+                caldata : calendarScheduleEvents,
+                displayWeekAbbr : true,
+                // choose between values in options.months or options.monthabbrs
+                displayMonthAbbr : true
+            } );
+
+//            alert(cal);
+
+            $month = $( '#custom-month' ).html( cal.getMonthName() );
+            $year = $( '#custom-year' ).html( cal.getYear() );
+
+            $( '#custom-next' ).on( 'click', function() {
+                cal.gotoNextMonth( updateMonthYear );
+            } );
+            $( '#custom-prev' ).on( 'click', function() {
+                cal.gotoPreviousMonth( updateMonthYear );
+            } );
+            $( '#custom-current' ).on( 'click', function() {
+                cal.gotoNow( updateMonthYear );
+            } );
+
+            function updateMonthYear() {
+                $month.html( cal.getMonthName() );
+                $year.html( cal.getYear() );
+            }
+
+            // you can also add more data later on. As an example:
+            /*
+             someElement.on( 'click', function() {
+
+             cal.setData( {
+             '03-01-2013' : '<a href="#">testing</a>',
+             '03-10-2013' : '<a href="#">testing</a>',
+             '03-12-2013' : '<a href="#">testing</a>'
+             } );
+             // goes to a specific month/year
+             cal.goto( 3, 2013, updateMonthYear );
+
+             } );
+             */
+
+        });
+    },
+    getCalendarData:function(){
+        var calScheduleStore = this.getRoomManagementStoreCalendarScheduleStore();
+
+        calendarScheduleEvents = {};
+        calScheduleStore.on('load',function(){
+            calScheduleStore.each(function(each_cal_sch){
+                var availability_info =
+                        each_cal_sch.get('room_type') + ":" + each_cal_sch.get('availability');
+//                codropsEvents["\""+each_cal_sch.get('date')+"\""] = availability_info;
+                calendarScheduleEvents[each_cal_sch.get('date')] = availability_info;
+            })
+
+        });
+
+
+    }
+
+    // Admin Functions
+
+})

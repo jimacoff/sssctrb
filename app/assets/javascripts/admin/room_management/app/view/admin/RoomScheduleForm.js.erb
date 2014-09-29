@@ -1,4 +1,4 @@
-Ext.define('AdminRoomManagement.view.admin.RoomScheduleForm',{
+Ext.define('RoomManagement.view.admin.RoomScheduleForm',{
     extend:'Ext.form.Panel',
     alias:'widget.roomScheduleForm',
 //    layout:'fit',
@@ -7,14 +7,14 @@ Ext.define('AdminRoomManagement.view.admin.RoomScheduleForm',{
         var me = this;
         me.defaults={
             padding:'10 10 0 10',
-            size:50
+            size:40
         };
 
         me.items=[
             {
                 xtype:'combo',
                 fieldLabel:'Room Type',
-                store:'AdminRoomManagement.store.RoomTypes',
+                store:'RoomManagement.store.RoomTypes',
                 displayField:'name',
                 name:'room_type_id',
                 valueField:'id',

@@ -1,0 +1,62 @@
+Ext.define('RoomManagement.view.userenquiry.EnquirySchedulePanel',{
+    extend:'Ext.panel.Panel',
+    alias:'widget.enquirySchedulePanel',
+    margin:'10 0 0 20',
+    maxHeight:'300',
+    maxWidth:'480',
+//    autoScroll:true,
+//    height:'180',
+//    border:1,
+//    style: {
+////        borderColor: 'black',
+//        borderStyle: 'solid'
+//    },
+    layout:'hbox',
+    initComponent:function(){
+        var me = this;
+        me.items=[
+            {
+                xtype:'enquiryScheduleForm',
+                minWidth:'450',
+                minHeight:'250',
+                autoScroll:true
+//                border:1
+//                style: {
+//            //        borderColor: 'black',
+//                    borderStyle: 'solid'
+//                }
+            },
+//            {
+//                xtype:'calendarPanel'
+//            }
+        ];
+
+//        me.dockedItems = [
+//            {
+//                xtype:'toolbar',
+//                dock:'top',
+//                items:[
+////                    '<-',
+//                    {
+//                        xtype:'button',
+//                        text:'+',
+//                        itemId:'addRoomSchedule',
+//                        iconCls:'add_cls',
+//                        tooltip:'Add Schedule'
+//                    },
+//                    {
+//                        xtype:'button',
+//                        text:'-',
+//                        itemId:'deleteRoomSchedule',
+//                        iconCls:'delete_cls',
+//                        tooltip:'Delete Schedule'
+//                    }
+//                ]
+//            }
+//        ];
+
+        me.callParent(arguments);
+    }
+
+
+})

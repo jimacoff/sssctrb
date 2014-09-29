@@ -1,0 +1,2 @@
+module Users::EnquiryHelper
+end

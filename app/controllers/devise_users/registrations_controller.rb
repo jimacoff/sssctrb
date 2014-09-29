@@ -1,7 +1,7 @@
 require 'multi_json'
 require 'active_support'
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class DeviseUsers::RegistrationsController < Devise::RegistrationsController
   layout 'sssctBookingLayout1',:except => []
 
   respond_to :json

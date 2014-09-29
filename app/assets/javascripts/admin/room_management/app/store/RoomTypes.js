@@ -1,5 +1,5 @@
-Ext.define('AdminRoomManagement.store.RoomTypes',{
+Ext.define('RoomManagement.store.RoomTypes',{
     extend:'Ext.data.Store',
-    model:'AdminRoomManagement.model.RoomType',
+    model:'RoomManagement.model.RoomType',
     autoLoad:true
 })

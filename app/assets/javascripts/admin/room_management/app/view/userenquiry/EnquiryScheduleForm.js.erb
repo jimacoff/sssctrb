@@ -1,0 +1,67 @@
+Ext.define('RoomManagement.view.userenquiry.EnquiryScheduleForm',{
+    extend:'Ext.form.Panel',
+    alias:'widget.enquiryScheduleForm',
+//    layout:'fit',
+    margin:'20',
+    minHeight:'200',
+    initComponent:function(){
+        var me = this;
+        me.defaults={
+            padding:'10 10 0 10',
+            size:40
+        };
+
+        me.items=[
+            {
+                xtype:'combo',
+                fieldLabel:'Room Type',
+                store:'RoomManagement.store.RoomTypes',
+                displayField:'name',
+                itemId:'room_type_Id',
+                name:'room_type_id',
+                valueField:'id',
+            },
+            {
+                xtype:'datefield',
+                minValue:new Date(),
+                fieldLabel:'From',
+                format:'M d, Y',
+                name:'from_date',
+                itemId:'from_date_Id',
+            },
+            {
+                xtype:'datefield',
+                minValue:new Date(),
+                fieldLabel:'To',
+                format:'M d, Y',
+                itemId:'to_date_Id',
+                name:'to_date'
+            }
+        ];
+
+        me.dockedItems=[
+            {
+                xtype:'toolbar',
+                dock:'bottom',
+                items:[
+                    {
+                        xtype:'button',
+                        text:'Check Availability',
+                        itemId:'check_availability',
+                        tooltip:'Check Availability'
+                    },
+                    {
+                        xtype:'button',
+                        text:'Reset',
+                        itemId:'reset',
+                        tooltip:'Reset'
+                    }
+                ]
+            }
+        ];
+
+        me.callParent(arguments);
+    }
+
+
+})
